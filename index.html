@@ -134,7 +134,11 @@ body.sheet-open { overflow: hidden; }
 .pill b { font: 500 .68rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--on-accent); background: var(--teal); padding: 6px 9px; border-radius: 999px; }
 .hero .lede { margin-inline: auto; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-.stage { position: relative; margin-top: clamp(40px, 6vw, 72px); width: 100%; }
+.stage { position: relative; margin-top: clamp(40px, 6vw, 72px); width: 100%; padding-bottom: 9%; }
+.frame-main { width: 86%; }
+.frame-mini { position: absolute; right: 0; bottom: 0; width: 44%; box-shadow: 0 40px 80px -30px #000; transform: rotate(-1.5deg); }
+.frame-main .frame-inner img, .frame-mini .frame-inner img { width: 100%; height: auto; }
+@media (max-width: 760px) { .stage { padding-bottom: 0; } .frame-main { width: 100%; } .frame-mini { display: none; } }
 .frame { border-radius: 18px; padding: 8px; background: linear-gradient(180deg, var(--line), transparent); }
 .frame-inner { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #000; }
 .frame-dots { display: flex; gap: 6px; padding: 10px 12px; background: var(--bg-2); border-bottom: 1px solid var(--line); }
@@ -143,8 +147,8 @@ body.sheet-open { overflow: hidden; }
 .float b { display: block; font-weight: 600; }
 .float small { color: var(--muted); }
 .float .ico { width: 34px; height: 34px; }
-.float-a { left: -2%; top: 28%; }
-.float-b { right: -2%; top: 58%; animation-delay: -3s; }
+.float-a { left: -2%; top: 12%; }
+.float-b { left: 6%; bottom: 4%; animation-delay: -3s; }
 @keyframes bob { 50% { transform: translateY(-8px); } }
 @media (max-width: 760px) { .float { display: none; } }
 
@@ -372,9 +376,13 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
         <a class="btn btn-ghost" href="#work">See our work</a>
       </div>
       <div class="stage">
-        <div class="frame"><div class="frame-inner">
+        <div class="frame frame-main"><div class="frame-inner">
           <div class="frame-dots"><i></i><i></i><i></i></div>
-          <img src="assets/work/clinic-dashboard.webp" alt="Orbis Clinic Suite dashboard" width="1600" height="844">
+          <img src="assets/work/grantira-dashboard-dark.webp" alt="Grantira law office dashboard" width="1600" height="842">
+        </div></div>
+        <div class="frame frame-mini"><div class="frame-inner">
+          <div class="frame-dots"><i></i><i></i><i></i></div>
+          <img src="assets/work/clinic-dental-chart.webp" alt="Orbis Clinic Suite dental chart" width="1600" height="845">
         </div></div>
         <div class="float float-a"><span class="ico"><svg><use href="#i-cal"/></svg></span><span><b>Court agenda</b><small>Every session, by lawyer</small></span></div>
         <div class="float float-b"><span class="ico"><svg><use href="#i-check"/></svg></span><span><b>Invoice INV-0002 paid</b><small>500 EGP, supplies taken from stock</small></span></div>
