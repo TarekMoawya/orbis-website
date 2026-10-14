@@ -7,9 +7,12 @@
 <meta name="description" content="Orbis Software Solution and Technology builds and sells management systems for law offices, clinics, shops, warehouses, schools and HR teams.">
 <meta name="theme-color" content="#06141c">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="alternate" hreflang="en" href="https://orbissolutionscom.org/">
+<link rel="alternate" hreflang="ar" href="https://orbissolutionscom.org/ar/">
+<script>/* send returning Arabic visitors (or Arabic browsers on first visit) to the Arabic site */try{var l=localStorage.getItem('orbis-lang');if(l==='ar'||(!l&&/^ar\b/i.test(navigator.language||'')))location.replace('ar/'+location.hash)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: dark-first product site. One morphing mega-menu panel under a floating header; hero carries a real product screenshot; alternating feature blocks for each delivered system. */
 :root {
@@ -24,6 +27,7 @@
   --on-accent: #04121a;
   --display: "Unbounded", "Arial Black", system-ui, sans-serif;
   --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --arabic: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --r: 16px;
   --max: 1180px;
@@ -70,6 +74,9 @@ a:hover > .arrow { transform: translateX(3px); }
 .chev { width: 10px; height: 10px; transition: transform .3s var(--ease); }
 .menu-trigger[aria-expanded="true"] .chev { transform: rotate(180deg); }
 .bar-cta { display: flex; gap: 8px; }
+.lang { display: inline-flex; align-items: center; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font: 600 .92rem/1 var(--arabic); color: var(--ink); white-space: nowrap; }
+.lang:hover { border-color: var(--teal); }
+.lang[lang="en"] { font-family: "Figtree", system-ui, sans-serif; }
 .bar-cta .btn { padding: 11px 18px; }
 
 .mega { position: absolute; left: 0; right: 0; top: calc(100% + 10px); border: 1px solid var(--line); border-radius: 22px; background: var(--bg-2); box-shadow: 0 40px 80px -30px #000; overflow: hidden; height: 0; opacity: 0; visibility: hidden; transform: translateY(-6px) scale(.99); transform-origin: top center; transition: height .45s var(--ease), opacity .25s, transform .35s var(--ease), visibility 0s .35s; }
@@ -261,6 +268,24 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
 .foot-base { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 22px; }
 @media (max-width: 760px) { .foot { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: 1 / -1; } }
 
+
+/* ---------- Arabic (right to left) ---------- */
+:root[dir="rtl"] { --display: var(--arabic); --body: var(--arabic); --mono: var(--arabic); }
+[dir="rtl"] * { letter-spacing: 0 !important; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 { line-height: 1.35; }
+[dir="rtl"] .eyebrow, [dir="rtl"] .pane-label, [dir="rtl"] .tag, [dir="rtl"] .chip, [dir="rtl"] .cta dt, [dir="rtl"] .foot h4 { font-weight: 600; font-size: .85rem; }
+[dir="rtl"] .brand b { font-family: "Unbounded", "Arial Black", sans-serif; }
+[dir="rtl"] .brand { margin-right: 0; margin-left: auto; }
+[dir="rtl"] .bar { padding: 10px 16px 10px 10px; }
+[dir="rtl"] .feats li { padding-left: 0; border-left: 0; padding-right: 18px; border-right: 2px solid var(--line); }
+[dir="rtl"] .feats li.lead { border-right-color: var(--teal); }
+[dir="rtl"] .float-a { left: auto; right: -2%; }
+[dir="rtl"] .float-b { right: auto; left: 2%; }
+[dir="rtl"] .frame-mini { right: auto; left: 0; transform: rotate(1.5deg); }
+[dir="rtl"] .card .live { right: auto; left: 22px; }
+[dir="rtl"] a:hover > .arrow { transform: translateX(-3px); }
+[dir="rtl"] .steps li::before { content: "خطوة " counter(s); }
+
 /* reveal on scroll, from a visible resting state */
 .reveal { transition: transform .8s var(--ease), opacity .8s; }
 .js .reveal.pending { opacity: .001; transform: translateY(18px); }
@@ -294,6 +319,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
           <li><a class="menu-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <a class="lang" href="ar/" hreflang="ar" lang="ar" data-lang="ar">عربي</a>
       <div class="bar-cta">
         <a class="btn btn-ghost" href="#work">See our work</a>
         <a class="btn btn-primary" href="#contact">Book a demo</a>
@@ -385,6 +411,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
   <a class="plain" href="#about">About</a>
   <a class="plain" href="#process">How we work</a>
   <a class="plain" href="#contact">Contact</a>
+  <a class="plain" href="ar/" hreflang="ar" lang="ar" data-lang="ar">عربي</a>
   <a class="btn btn-primary" href="#contact">Book a demo</a>
 </div>
 
@@ -642,6 +669,9 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
 
 <script>
 document.documentElement.classList.add('js');
+document.querySelectorAll('[data-lang]').forEach(function (a) {
+  a.addEventListener('click', function () { try { localStorage.setItem('orbis-lang', a.dataset.lang); } catch (e) {} });
+});
 document.getElementById('year').textContent = new Date().getFullYear();
 
 /* Mega menu: one panel that morphs height and slides content between panes */
@@ -652,6 +682,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
   var panes = Array.prototype.slice.call(mega.querySelectorAll('.mega-pane'));
   var order = triggers.map(function (t) { return t.dataset.pane; });
   var current = null, closeTimer = null;
+  var sgn = document.documentElement.dir === 'rtl' ? -1 : 1;
 
   function open(name) {
     clearTimeout(closeTimer);
@@ -660,12 +691,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
     panes.forEach(function (p) {
       var on = p.dataset.pane === name;
       if (on) {
-        p.style.setProperty('--from', current ? (nextIdx > prevIdx ? '40px' : '-40px') : '0px');
+        p.style.setProperty('--from', current ? (sgn * (nextIdx > prevIdx ? 40 : -40)) + 'px' : '0px');
         p.offsetWidth;
         p.classList.add('active');
         mega.style.height = p.offsetHeight + 'px';
       } else {
-        if (p.classList.contains('active')) p.style.setProperty('--from', nextIdx > order.indexOf(p.dataset.pane) ? '-40px' : '40px');
+        if (p.classList.contains('active')) p.style.setProperty('--from', (sgn * (nextIdx > order.indexOf(p.dataset.pane) ? -40 : 40)) + 'px');
         p.classList.remove('active');
       }
     });
