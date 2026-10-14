@@ -178,12 +178,34 @@ section { padding-block: clamp(72px, 10vw, 128px); }
 .ticks li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; font-size: .97rem; }
 .ticks svg { width: 18px; height: 18px; color: var(--teal); margin-top: 3px; }
 .viewer { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
+#clinic { align-items: start; }
+#clinic .viewer { position: sticky; top: 110px; }
+@media (max-width: 900px) { #clinic .viewer { position: static; } }
 .viewer .frame-inner img { width: 100%; height: auto; transition: opacity .25s; }
 .tabs { display: flex; gap: 6px; overflow-x: auto; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-2); justify-self: start; max-width: 100%; }
 .tab { padding: 8px 14px; border-radius: 999px; border: 0; background: none; cursor: pointer; font-size: .85rem; font-weight: 500; color: var(--muted); white-space: nowrap; transition: background .2s, color .2s; }
 .tab:hover { color: var(--ink); }
 .tab[aria-selected="true"] { background: var(--panel); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
 @media (max-width: 900px) { .project, .project:nth-of-type(even) { grid-template-columns: 1fr; } .project:nth-of-type(even) .copy { order: 0; } }
+
+.feats { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 14px; }
+.feats li { display: grid; gap: 2px; padding-left: 18px; border-left: 2px solid var(--line); }
+.feats li.lead { border-left-color: var(--teal); }
+.feats b { font-weight: 600; font-size: 1rem; }
+.feats span { color: var(--muted); font-size: .92rem; line-height: 1.5; }
+.clinic-extra { display: grid; gap: 20px; margin-top: 8px; }
+.mini { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.mini li { display: flex; gap: 10px; align-items: center; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-2); font-size: .92rem; }
+.mini svg { flex: none; width: 18px; height: 18px; color: var(--teal); }
+.trust { border: 1px solid var(--line); border-radius: 20px; padding: clamp(20px, 3vw, 32px); background: linear-gradient(135deg, color-mix(in srgb, var(--teal) 10%, var(--bg-2)), var(--bg-2) 60%); display: grid; gap: 22px; }
+.trust-head { display: flex; gap: 16px; align-items: center; }
+.trust-head h4 { margin: 6px 0 0; font: 700 clamp(1.15rem, 2.2vw, 1.5rem)/1.2 var(--display); }
+.trust-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.trust-grid div { display: grid; gap: 6px; align-content: start; }
+.trust-grid b { font-weight: 600; }
+.trust-grid span { color: var(--muted); font-size: .92rem; line-height: 1.5; }
+@media (max-width: 860px) { .mini { grid-template-columns: 1fr 1fr; } .trust-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .mini { grid-template-columns: 1fr; } }
 
 /* ---------- Connected cards (solutions) ---------- */
 .alt { background: var(--bg-2); border-block: 1px solid var(--line); }
@@ -256,6 +278,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
   <symbol id="i-chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5l3 3 3-3"/></symbol>
 </svg>
 
@@ -283,7 +306,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
             <p class="pane-label">Management systems</p>
             <div class="items">
               <a class="item" href="#s-law"><span class="ico"><svg><use href="#i-scale"/></svg></span><span><b>Law Offices</b><small>Cases, clients, powers of attorney, court agenda</small></span></a>
-              <a class="item" href="#s-clinic"><span class="ico"><svg><use href="#i-tooth"/></svg></span><span><b>Clinics &amp; Dental</b><small>Patients, appointments, dental chart, billing</small></span></a>
+              <a class="item" href="#s-clinic"><span class="ico"><svg><use href="#i-tooth"/></svg></span><span><b>Clinics &amp; Dental</b><small>Dental chart, appointments, billing, profit</small></span></a>
               <a class="item" href="#s-pos"><span class="ico"><svg><use href="#i-pos"/></svg></span><span><b>Sales &amp; POS</b><small>Checkout, invoices and daily sales reports</small></span></a>
               <a class="item" href="#s-stock"><span class="ico"><svg><use href="#i-box"/></svg></span><span><b>Inventory</b><small>Stock across branches, low-stock alerts</small></span></a>
               <a class="item" href="#s-hr"><span class="ico"><svg><use href="#i-people"/></svg></span><span><b>HR &amp; Payroll</b><small>Attendance, leave and monthly salaries</small></span></a>
@@ -309,7 +332,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
             <img src="assets/work/clinic-dental-chart.webp" alt="" loading="lazy">
             <span class="tag">Healthcare</span>
             <b>Orbis Clinic Suite</b>
-            <small>Dental clinic management, Arabic and English.</small>
+            <small>Digital dental chart, billing and profit reports.</small>
           </a>
           <div class="side-links">
             <p class="pane-label">Explore</p>
@@ -442,15 +465,16 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
 
       <article class="project reveal" id="clinic" data-gallery>
         <div class="copy">
-          <div class="chips"><span class="chip">Healthcare</span><span class="chip">Arabic &amp; English</span><span class="chip">Desktop app</span></div>
+          <div class="chips"><span class="chip">Healthcare</span><span class="chip">Arabic &amp; English</span><span class="chip">Windows &amp; Android tablets</span></div>
           <h3>Orbis Clinic Suite</h3>
-          <p class="sub">Dental clinic management from reception to invoice. Reception books and checks in patients, the doctor sees who is waiting, charts each tooth and records the plan, and invoices pull the treatment and supplies used straight from stock.</p>
-          <ul class="ticks">
-            <li><svg><use href="#i-check"/></svg>Patient files with history, X-rays and photos</li>
-            <li><svg><use href="#i-check"/></svg>Interactive dental chart, adult and child teeth</li>
-            <li><svg><use href="#i-check"/></svg>Appointments by doctor, treatment and duration</li>
-            <li><svg><use href="#i-check"/></svg>Invoices linked to inventory</li>
-            <li><svg><use href="#i-check"/></svg>Switches between Arabic and English</li>
+          <p class="sub">Dental clinic management from reception to profit report. Everything a clinic runs on, in one system that works the way Egyptian clinics work.</p>
+          <ul class="feats">
+            <li class="lead"><b>Digital dental chart</b><span>Chart every tooth surface (mesial, distal, occlusal, buccal, lingual) with standard FDI numbering. Mark caries, fillings, crowns, root canals, implants and missing teeth.</span></li>
+            <li><b>The whole visit on one screen</b><span>History, chart, notes, prescriptions, treatment plan and X-rays together, with no jumping between screens.</span></li>
+            <li><b>Appointments and check-in</b><span>Book by doctor and visit type. Checked-in patients appear on the doctor's waiting list straight away.</span></li>
+            <li><b>Billing the way Egyptians pay</b><span>Cash, Visa, Vodafone Cash, InstaPay and insurance, with partial payments and an unpaid-balance list.</span></li>
+            <li><b>Know your real profit</b><span>Revenue, expenses, profit and cash in hand, with 12-month trends by doctor, treatment or payment method.</span></li>
+            <li><b>AI financial assistant</b><span>Ask "Why was this month lower?" in Arabic or English and get answers from your clinic's own numbers.</span></li>
           </ul>
         </div>
         <figure class="viewer">
@@ -464,6 +488,25 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
           <div class="frame"><div class="frame-inner"><img class="viewer-main" src="assets/work/clinic-dental-chart.webp" alt="Dental chart" width="1600" height="845" loading="lazy"></div></div>
         </figure>
       </article>
+
+      <div class="clinic-extra reveal">
+        <ul class="mini">
+          <li><svg><use href="#i-people"/></svg>5 roles, each with its own dashboard</li>
+          <li><svg><use href="#i-box"/></svg>Inventory that subtracts supplies automatically</li>
+          <li><svg><use href="#i-chat"/></svg>Full Arabic right-to-left and English</li>
+          <li><svg><use href="#i-pos"/></svg>Live sync across Windows PCs and Android tablets</li>
+          <li><svg><use href="#i-cal"/></svg>Printed treatment plans and prescriptions</li>
+          <li><svg><use href="#i-check"/></svg>Simple installer, updates without reinstalling</li>
+        </ul>
+        <div class="trust">
+          <div class="trust-head"><span class="ico"><svg><use href="#i-lock"/></svg></span><div><p class="eyebrow">Privacy built in</p><h4>Your patients' data stays yours.</h4></div></div>
+          <div class="trust-grid">
+            <div><b>X-rays stay in the clinic</b><span>Images and photos are kept on your clinic's own computer, never in the cloud, and load fast over your local network.</span></div>
+            <div><b>Every clinic fully separated</b><span>Each clinic's data is isolated. No other clinic can ever see it.</span></div>
+            <div><b>Permissions enforced by the database</b><span>Not just hidden buttons. A receptionist can't see finances, even with a modified app.</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -476,7 +519,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
       </div>
       <div class="grid">
         <article class="card reveal" id="s-law"><span class="live">Live</span><span class="ico"><svg><use href="#i-scale"/></svg></span><h3>Law Offices</h3><p>Cases, clients, powers of attorney, hearings and rulings, with paper and cash custody.</p></article>
-        <article class="card reveal" id="s-clinic"><span class="live">Live</span><span class="ico"><svg><use href="#i-tooth"/></svg></span><h3>Clinics &amp; Dental</h3><p>Appointments, patient files, dental chart, X-rays and invoices linked to stock.</p></article>
+        <article class="card reveal" id="s-clinic"><span class="live">Live</span><span class="ico"><svg><use href="#i-tooth"/></svg></span><h3>Clinics &amp; Dental</h3><p>Digital dental chart, appointments, billing with Vodafone Cash and InstaPay, and real profit reports.</p></article>
         <article class="card reveal" id="s-pos"><span class="ico"><svg><use href="#i-pos"/></svg></span><h3>Sales &amp; POS</h3><p>Fast checkout, barcode and receipt printing, customer accounts and daily reports.</p></article>
         <article class="card reveal" id="s-stock"><span class="ico"><svg><use href="#i-box"/></svg></span><h3>Inventory</h3><p>Know what you have in every branch, what is running low and when to reorder.</p></article>
         <article class="card reveal" id="s-hr"><span class="ico"><svg><use href="#i-people"/></svg></span><h3>HR &amp; Payroll</h3><p>Employees, attendance, leave and monthly payroll in one place.</p></article>
