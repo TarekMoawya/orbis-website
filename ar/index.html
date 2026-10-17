@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Orbis | أنظمة إدارة للشركات</title>
-<meta name="description" content="Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات والمحلات والمخازن والمدارس وشؤون الموظفين.">
+<meta name="description" content="Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات وصالونات الحلاقة والمحلات والمخازن والمدارس وشؤون الموظفين.">
 <meta name="theme-color" content="#06141c">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="alternate" hreflang="en" href="https://orbissolutionscom.org/">
@@ -83,7 +83,7 @@ a:hover > .arrow { transform: translateX(3px); }
 .mega-pane { position: absolute; inset: 0 0 auto 0; padding: 22px; display: grid; gap: 22px; opacity: 0; transform: translateX(var(--from, 0px)); pointer-events: none; transition: opacity .3s, transform .45s var(--ease); }
 .mega-pane.active { opacity: 1; transform: none; pointer-events: auto; }
 .pane-solutions { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
-.pane-work { grid-template-columns: repeat(2, minmax(0, 1fr)) minmax(0, .8fr); }
+.pane-work { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, .8fr); }
 .pane-company { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .pane-label { font: 500 0.68rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 4px 0 10px 12px; }
 .items { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
@@ -303,6 +303,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
   <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1L20 20M8.1 15.9L20 4"/></symbol>
   <symbol id="i-chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5l3 3 3-3"/></symbol>
 </svg>
 
@@ -359,6 +360,12 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
             <b>Orbis Clinic Suite</b>
             <small>رسم أسنان رقمي وفواتير وتقارير أرباح.</small>
           </a>
+          <a class="feature-card" href="#barber">
+            <img src="../assets/work/barber-checkout.webp" alt="" loading="lazy">
+            <span class="tag">صالونات الحلاقة</span>
+            <b>Orbis Barbershop</b>
+            <small>كاشير بشاشة لمس وفواتير ومخزن وأرباح.</small>
+          </a>
           <div class="side-links">
             <p class="pane-label">استكشف</p>
             <a href="#work">كل المشاريع <span class="arrow">←</span></a>
@@ -405,6 +412,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
     <div class="items">
       <a class="item" href="#grantira"><span class="ico"><svg><use href="#i-scale"/></svg></span><span><b>جرانتيرا</b><small>إدارة مكاتب المحاماة</small></span></a>
       <a class="item" href="#clinic"><span class="ico"><svg><use href="#i-tooth"/></svg></span><span><b>Orbis Clinic Suite</b><small>إدارة عيادات الأسنان</small></span></a>
+      <a class="item" href="#barber"><span class="ico"><svg><use href="#i-scissors"/></svg></span><span><b>Orbis Barbershop</b><small>إدارة صالونات الحلاقة</small></span></a>
     </div>
   </details>
   <a class="plain" href="#about">عن الشركة</a>
@@ -417,9 +425,9 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <a class="pill" href="#work"><b>شغّال</b> شغالين دلوقتي في مكاتب محاماة وعيادات أسنان</a>
+      <a class="pill" href="#work"><b>شغّال</b> شغالين دلوقتي في مكاتب محاماة وعيادات أسنان وصالونات حلاقة</a>
       <h1>أدِر شغلك كله<br>من <span class="grad">نظام واحد واضح.</span></h1>
-      <p class="lede">Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبني وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات والمحلات والمخازن والمدارس. قضاياك ومرضاك ومخزونك وموظفينك وتقاريرك، كلها في مكان واحد.</p>
+      <p class="lede">Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبني وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات وصالونات الحلاقة والمحلات والمخازن والمدارس. قضاياك ومرضاك ومخزونك وموظفينك وتقاريرك، كلها في مكان واحد.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contact">احجز عرض تجريبي <span class="arrow">←</span></a>
         <a class="btn btn-ghost" href="#work">شوف أعمالنا</a>
@@ -445,6 +453,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
       <ul>
         <li><svg><use href="#i-scale"/></svg>مكاتب المحاماة</li>
         <li><svg><use href="#i-tooth"/></svg>عيادات الأسنان</li>
+        <li><svg><use href="#i-scissors"/></svg>صالونات الحلاقة</li>
         <li><svg><use href="#i-pos"/></svg>المحلات ونقاط البيع</li>
         <li><svg><use href="#i-box"/></svg>المخازن</li>
         <li><svg><use href="#i-people"/></svg>شؤون الموظفين</li>
@@ -458,11 +467,12 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
       <div class="head reveal">
         <p class="eyebrow">أعمالنا</p>
         <h2>أنظمة شغالة في أماكن حقيقية.</h2>
-        <p class="lede">اتنين من الأنظمة اللي صممناها وبنيناها وسلمناها، ومشاريع تانية جاية في الطريق.</p>
+        <p class="lede">تلاتة من الأنظمة اللي صممناها وبنيناها وسلمناها، ومشاريع تانية جاية في الطريق.</p>
       </div>
       <div class="index">
         <a href="#grantira"><span>01</span>جرانتيرا</a>
         <a href="#clinic"><span>02</span>Orbis Clinic Suite</a>
+        <a href="#barber"><span>03</span>Orbis Barbershop</a>
       </div>
 
       <article class="project reveal" id="grantira" data-gallery>
@@ -553,6 +563,50 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
           </div>
         </div>
       </div>
+
+      <article class="project reveal" id="barber" data-gallery>
+        <div class="copy">
+          <div class="chips"><span class="chip">صالونات الحلاقة</span><span class="chip">عربي</span><span class="chip">ويندوز وشاشات لمس</span></div>
+          <h3>Orbis Barbershop</h3>
+          <p class="sub">إدارة صالون الحلاقة من كمبيوتر واحد على الكاونتر. الكاشير والفواتير والعملاء والمخزن والفلوس، في نظام عربي سريع شغال من غير إنترنت.</p>
+          <ul class="feats">
+            <li class="lead"><b>كاشير بشاشة لمس</b><span>دوس على الخدمات والمنتجات من مربعات كبيرة، اختار الحلاق والعميل، واعمل خصم بالجنيه أو بالنسبة، وبعدين احفظ واطبع. كاش أو فيزا أو محفظة وإنستاباي.</span></li>
+            <li><b>فواتير على طابعة حرارية</b><span>اسم المحل وتليفونه وعنوانه ورسالة شكر على رول 58 أو 80 مم. اطبع أي فاتورة تاني، وإلغاء الفاتورة للمالك بس.</span></li>
+            <li><b>العملاء وزياراتهم</b><span>اكتب رقم التليفون والعميل يظهر بعدد زياراته وإجمالي اللي دفعه وملاحظاته، زي الحلاق اللي بيحبه أو طريقة القص.</span></li>
+            <li><b>مخزن بيحسب نفسه</b><span>المنتجات اللي بتتباع بتتخصم من المخزن مع كل فاتورة. استلم بضاعة، وسجّل المستلزمات المصروفة أو التالفة، واعمل جرد، وشوف إيه اللي قرب يخلص.</span></li>
+            <li><b>سلف الموظفين ومصروفات المحل</b><span>سجّل سلف كل حلاق والسداد والمتبقي عليه، ومصروفات المحل من إيجار وكهربا ومرتبات وغيرها حسب النوع.</span></li>
+            <li><b>تقرير الأرباح للمالك</b><span>الإيرادات والمصروفات وصافي الربح والنقدية لأي فترة، مع إيراد كل حلاق وأكتر الخدمات والمنتجات مبيعًا والمصروفات حسب النوع.</span></li>
+          </ul>
+        </div>
+        <figure class="viewer">
+          <div class="tabs" role="tablist" aria-label="شاشات Orbis Barbershop">
+            <button class="tab" role="tab" aria-selected="true" data-src="../assets/work/barber-checkout.webp" data-alt="شاشة الكاشير وفاتورة جديدة">الكاشير</button>
+            <button class="tab" role="tab" aria-selected="false" data-src="../assets/work/barber-reports.webp" data-alt="التقارير المالية">التقارير</button>
+            <button class="tab" role="tab" aria-selected="false" data-src="../assets/work/barber-customers.webp" data-alt="العملاء وسجل الزيارات">العملاء</button>
+            <button class="tab" role="tab" aria-selected="false" data-src="../assets/work/barber-stock.webp" data-alt="المخزن وحالة كل صنف">المخزن</button>
+          </div>
+          <div class="frame"><div class="frame-inner"><img class="viewer-main" src="../assets/work/barber-checkout.webp" alt="شاشة الكاشير وفاتورة جديدة" width="1600" height="844" loading="lazy"></div></div>
+        </figure>
+      </article>
+
+      <div class="proj-extra reveal">
+        <ul class="mini">
+          <li><svg><use href="#i-people"/></svg>صلاحيات للمالك والكاشير</li>
+          <li><svg><use href="#i-pos"/></svg>بيظبط على أي شاشة، لحد شاشات الكاشير اللمس <span dir="ltr">1024×768</span></li>
+          <li><svg><use href="#i-chat"/></svg>عربي كامل من اليمين للشمال، والأسعار بالجنيه</li>
+          <li><svg><use href="#i-check"/></svg>شغال أوفلاين من غير إنترنت</li>
+          <li><svg><use href="#i-box"/></svg>منتجات للبيع ومستلزمات للمحل</li>
+          <li><svg><use href="#i-cal"/></svg>تسطيب سهل على ويندوز</li>
+        </ul>
+        <div class="trust">
+          <div class="trust-head"><span class="ico"><svg><use href="#i-lock"/></svg></span><div><p class="eyebrow">محلك وبياناتك</p><h4>كل حاجة بتفضل على كمبيوتر المحل.</h4></div></div>
+          <div class="trust-grid">
+            <div><b>نسخة احتياطية كل يوم</b><span>النظام بيحفظ نسخة احتياطية لوحده كل يوم ويحتفظ بآخر 30 نسخة. والمالك كمان يقدر ياخد نسخة على فلاشة ويرجّعها.</span></div>
+            <div><b>الكاشير يشوف الكاونتر بس</b><span>الكاشير بيعمل الفواتير ويضيف العملاء ويسجل المصروفات، لكن مايقدرش يغير الأسعار أو يشوف تقرير الأرباح أو يلغي فواتير أو يمسح حاجة.</span></div>
+            <div><b>كل دخول محمي</b><span>كل مستخدم بيدخل بكلمة السر بتاعته، والمالك بس هو اللي يضيف مستخدمين أو يغير صلاحياتهم.</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -631,6 +685,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
               <select id="f-type" name="type">
                 <option>مكتب محاماة</option>
                 <option>عيادة أو مركز أسنان</option>
+                <option>صالون حلاقة</option>
                 <option>مبيعات ونقاط بيع</option>
                 <option>مخزون ومخازن</option>
                 <option>شؤون الموظفين والمرتبات</option>
@@ -656,7 +711,7 @@ footer { padding-block: 48px 36px; color: var(--muted); font-size: .9rem; }
         <p>للحلول البرمجية والتكنولوجيا. أنظمة إدارة متفصّلة على طريقة شغلك.</p>
       </div>
       <div><h4>الحلول</h4><ul><li><a href="#s-law">مكاتب المحاماة</a></li><li><a href="#s-clinic">العيادات</a></li><li><a href="#s-pos">المبيعات ونقاط البيع</a></li><li><a href="#s-stock">المخازن</a></li></ul></div>
-      <div><h4>أعمالنا</h4><ul><li><a href="#grantira">جرانتيرا</a></li><li><a href="#clinic">Orbis Clinic Suite</a></li></ul></div>
+      <div><h4>أعمالنا</h4><ul><li><a href="#grantira">جرانتيرا</a></li><li><a href="#clinic">Orbis Clinic Suite</a></li><li><a href="#barber">Orbis Barbershop</a></li></ul></div>
       <div><h4>الشركة</h4><ul><li><a href="#about">عن الشركة</a></li><li><a href="#process">طريقة شغلنا</a></li><li><a href="#contact">تواصل معنا</a></li></ul></div>
     </div>
     <div class="foot-base">

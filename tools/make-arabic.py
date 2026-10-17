@@ -22,8 +22,8 @@ PAIRS = [
     # ---- document head ----
     ('<html lang="en">', '<html lang="ar" dir="rtl">'),
     ('<title>Orbis Solutions</title>', '<title>Orbis | أنظمة إدارة للشركات</title>'),
-    ('content="Orbis Software Solution and Technology builds and sells management systems for law offices, clinics, shops, warehouses, schools and HR teams."',
-     'content="Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات والمحلات والمخازن والمدارس وشؤون الموظفين."'),
+    ('content="Orbis Software Solution and Technology builds and sells management systems for law offices, clinics, barbershops, shops, warehouses, schools and HR teams."',
+     'content="Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات وصالونات الحلاقة والمحلات والمخازن والمدارس وشؤون الموظفين."'),
 
     # ---- language switch ----
     ('<a class="lang" href="ar/" hreflang="ar" lang="ar" data-lang="ar">عربي</a>',
@@ -47,6 +47,7 @@ PAIRS = [
     # ---- mega menu: work ----
     ('Judicial agenda, cases and powers of attorney.', 'الأجندة القضائية والقضايا والتوكيلات.'),
     ('Digital dental chart, billing and profit reports.', 'رسم أسنان رقمي وفواتير وتقارير أرباح.'),
+    ('Touch-screen cashier, receipts, stock and profit.', 'كاشير بشاشة لمس وفواتير ومخزن وأرباح.'),
     ('>Explore<', '>استكشف<'),
     ('All projects', 'كل المشاريع'),
     ('How we deliver', 'إزاي بنسلّم'),
@@ -68,17 +69,18 @@ PAIRS = [
     ('<small>Students, fees, grades</small>', '<small>الطلاب والمصروفات والدرجات</small>'),
     ('<small>Law office management</small>', '<small>إدارة مكاتب المحاماة</small>'),
     ('<small>Dental clinic management</small>', '<small>إدارة عيادات الأسنان</small>'),
+    ('<small>Barbershop and salon management</small>', '<small>إدارة صالونات الحلاقة</small>'),
     ('aria-label="Main"', 'aria-label="القائمة الرئيسية"'),
     ('aria-label="Menu"', 'aria-label="القائمة"'),
     ('aria-label="Open menu"', 'aria-label="فتح القائمة"'),
     ("on ? 'Close menu' : 'Open menu'", "on ? 'إغلاق القائمة' : 'فتح القائمة'"),
 
     # ---- hero ----
-    ('<b>Live</b> Now running in law offices and dental clinics', '<b>شغّال</b> شغالين دلوقتي في مكاتب محاماة وعيادات أسنان'),
+    ('<b>Live</b> Now running in law offices, dental clinics and barbershops', '<b>شغّال</b> شغالين دلوقتي في مكاتب محاماة وعيادات أسنان وصالونات حلاقة'),
     ('<h1>Run your business<br>from <span class="grad">one clear system.</span></h1>',
      '<h1>أدِر شغلك كله<br>من <span class="grad">نظام واحد واضح.</span></h1>'),
-    ('Orbis Software Solution and Technology designs, builds and sells management software for law offices, clinics, shops, warehouses and schools. Your cases, patients, stock, staff and reports, all in one place.',
-     'Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبني وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات والمحلات والمخازن والمدارس. قضاياك ومرضاك ومخزونك وموظفينك وتقاريرك، كلها في مكان واحد.'),
+    ('Orbis Software Solution and Technology designs, builds and sells management software for law offices, clinics, barbershops, shops, warehouses and schools. Your cases, patients, stock, staff and reports, all in one place.',
+     'Orbis للحلول البرمجية والتكنولوجيا بتصمم وتبني وتبيع أنظمة إدارة لمكاتب المحاماة والعيادات وصالونات الحلاقة والمحلات والمخازن والمدارس. قضاياك ومرضاك ومخزونك وموظفينك وتقاريرك، كلها في مكان واحد.'),
     ('alt="Grantira law office dashboard"', 'alt="لوحة جرانتيرا لمكاتب المحاماة"'),
     ('alt="Grantira court agenda"', 'alt="الأجندة القضائية في جرانتيرا"'),
     ('<b>Today at the office</b><small>Hearings, tasks and papers out</small>', '<b>النهارده في المكتب</b><small>الجلسات والمهام والأوراق اللي برّه</small>'),
@@ -87,6 +89,7 @@ PAIRS = [
     # ---- strip ----
     ('One team, systems for many kinds of work', 'فريق واحد وأنظمة لكل أنواع الشغل'),
     ('</svg>Dental clinics</li>', '</svg>عيادات الأسنان</li>'),
+    ('</svg>Barbershops</li>', '</svg>صالونات الحلاقة</li>'),
     ('</svg>Retail &amp; POS</li>', '</svg>المحلات ونقاط البيع</li>'),
     ('</svg>Warehouses</li>', '</svg>المخازن</li>'),
     ('</svg>HR teams</li>', '</svg>شؤون الموظفين</li>'),
@@ -94,7 +97,7 @@ PAIRS = [
 
     # ---- our work ----
     ('Systems running in real businesses.', 'أنظمة شغالة في أماكن حقيقية.'),
-    ('Two of the systems we have designed, built and delivered. More projects are on the way.', 'اتنين من الأنظمة اللي صممناها وبنيناها وسلمناها، ومشاريع تانية جاية في الطريق.'),
+    ('Three of the systems we have designed, built and delivered. More projects are on the way.', 'تلاتة من الأنظمة اللي صممناها وبنيناها وسلمناها، ومشاريع تانية جاية في الطريق.'),
 
     # grantira
     ('Windows, Mac, Android, iOS &amp; web', 'ويندوز وماك وأندرويد وiOS والويب'),
@@ -172,6 +175,43 @@ PAIRS = [
     ("<b>Permissions enforced by the database</b><span>Not just hidden buttons. A receptionist can't see finances, even with a modified app.</span>",
      '<b>الصلاحيات متطبقة من قاعدة البيانات</b><span>مش مجرد زراير مستخبية. موظف الاستقبال مايقدرش يشوف الحسابات حتى لو معاه نسخة متعدلة من البرنامج.</span>'),
 
+    # barbershop
+    ('Windows &amp; touch screens', 'ويندوز وشاشات لمس'),
+    ('Barbershop and salon management on one PC at the counter. The cashier, the receipts, the customers, the stock and the money, in a fast Arabic system that works with no internet.',
+     'إدارة صالون الحلاقة من كمبيوتر واحد على الكاونتر. الكاشير والفواتير والعملاء والمخزن والفلوس، في نظام عربي سريع شغال من غير إنترنت.'),
+    ('<b>A touch-screen cashier</b><span>Tap services and products from big tiles, pick the barber and the customer, give a discount in pounds or percent, then save and print. Cash, Visa or wallet and InstaPay.</span>',
+     '<b>كاشير بشاشة لمس</b><span>دوس على الخدمات والمنتجات من مربعات كبيرة، اختار الحلاق والعميل، واعمل خصم بالجنيه أو بالنسبة، وبعدين احفظ واطبع. كاش أو فيزا أو محفظة وإنستاباي.</span>'),
+    ("<b>Receipts on a thermal printer</b><span>Your shop's name, phone, address and thank-you message on 58 mm or 80 mm rolls. Reprint any receipt, and only the owner can void one.</span>",
+     '<b>فواتير على طابعة حرارية</b><span>اسم المحل وتليفونه وعنوانه ورسالة شكر على رول 58 أو 80 مم. اطبع أي فاتورة تاني، وإلغاء الفاتورة للمالك بس.</span>'),
+    ('<b>Customers and their visits</b><span>Type a phone number and the customer comes up with their visit count, total spent and notes like their favourite barber or cut.</span>',
+     '<b>العملاء وزياراتهم</b><span>اكتب رقم التليفون والعميل يظهر بعدد زياراته وإجمالي اللي دفعه وملاحظاته، زي الحلاق اللي بيحبه أو طريقة القص.</span>'),
+    ('<b>Stock that counts itself</b><span>Products sold at the counter come out of stock on every receipt. Receive goods, record supplies used or damaged, count the shelf, and see what is running low.</span>',
+     '<b>مخزن بيحسب نفسه</b><span>المنتجات اللي بتتباع بتتخصم من المخزن مع كل فاتورة. استلم بضاعة، وسجّل المستلزمات المصروفة أو التالفة، واعمل جرد، وشوف إيه اللي قرب يخلص.</span>'),
+    ("<b>Staff loans and shop costs</b><span>Record each barber's loans and repayments with the balance left, and the shop's rent, electricity, salaries and other costs by category.</span>",
+     '<b>سلف الموظفين ومصروفات المحل</b><span>سجّل سلف كل حلاق والسداد والمتبقي عليه، ومصروفات المحل من إيجار وكهربا ومرتبات وغيرها حسب النوع.</span>'),
+    ("<b>The owner's profit report</b><span>Revenue, costs, net profit and cash for any period, with sales per barber, top services and products, and costs by category.</span>",
+     '<b>تقرير الأرباح للمالك</b><span>الإيرادات والمصروفات وصافي الربح والنقدية لأي فترة، مع إيراد كل حلاق وأكتر الخدمات والمنتجات مبيعًا والمصروفات حسب النوع.</span>'),
+    ('aria-label="Orbis Barbershop screens"', 'aria-label="شاشات Orbis Barbershop"'),
+    ('"Cashier screen with a new receipt">Cashier</button>', '"شاشة الكاشير وفاتورة جديدة">الكاشير</button>'),
+    ('alt="Cashier screen with a new receipt"', 'alt="شاشة الكاشير وفاتورة جديدة"'),
+    ('"Financial reports">Reports</button>', '"التقارير المالية">التقارير</button>'),
+    ('"Customers and visit history">Customers</button>', '"العملاء وسجل الزيارات">العملاء</button>'),
+    ('"Stock with low-stock status">Stock</button>', '"المخزن وحالة كل صنف">المخزن</button>'),
+    ('Owner and cashier roles', 'صلاحيات للمالك والكاشير'),
+    ('Fits any screen, down to <span dir="ltr">1024×768</span> touch POS', 'بيظبط على أي شاشة، لحد شاشات الكاشير اللمس <span dir="ltr">1024×768</span>'),
+    ('Full Arabic right-to-left, prices in EGP', 'عربي كامل من اليمين للشمال، والأسعار بالجنيه'),
+    ('Works offline, no internet needed', 'شغال أوفلاين من غير إنترنت'),
+    ('Products for sale and shop supplies', 'منتجات للبيع ومستلزمات للمحل'),
+    ('Simple Windows installer', 'تسطيب سهل على ويندوز'),
+    ('Your shop, your data', 'محلك وبياناتك'),
+    ("Everything stays on the shop's PC.", 'كل حاجة بتفضل على كمبيوتر المحل.'),
+    ('<b>Backed up every day</b><span>The system saves a backup automatically each day and keeps the last 30. The owner can also back up to a USB drive and restore it.</span>',
+     '<b>نسخة احتياطية كل يوم</b><span>النظام بيحفظ نسخة احتياطية لوحده كل يوم ويحتفظ بآخر 30 نسخة. والمالك كمان يقدر ياخد نسخة على فلاشة ويرجّعها.</span>'),
+    ("<b>The cashier sees only the counter</b><span>A cashier makes receipts, adds customers and records costs, but can't change prices, see the profit report, void receipts or delete records.</span>",
+     '<b>الكاشير يشوف الكاونتر بس</b><span>الكاشير بيعمل الفواتير ويضيف العملاء ويسجل المصروفات، لكن مايقدرش يغير الأسعار أو يشوف تقرير الأرباح أو يلغي فواتير أو يمسح حاجة.</span>'),
+    ('<b>Every login protected</b><span>Each user signs in with their own password, and only the owner adds users or changes their access.</span>',
+     '<b>كل دخول محمي</b><span>كل مستخدم بيدخل بكلمة السر بتاعته، والمالك بس هو اللي يضيف مستخدمين أو يغير صلاحياتهم.</span>'),
+
     # ---- solutions ----
     ('Pick a system, or let us build yours.', 'اختار نظام، أو خلينا نبنيلك نظامك.'),
     ('Start from one of our ready-made systems and adapt it to your business, or ask us for something built from scratch.',
@@ -213,6 +253,7 @@ PAIRS = [
     ('>System you need\n', '>النظام اللي محتاجه\n'),
     ('<option>Law Office</option>', '<option>مكتب محاماة</option>'),
     ('<option>Clinic &amp; Dental Center</option>', '<option>عيادة أو مركز أسنان</option>'),
+    ('<option>Barbershop &amp; Salon</option>', '<option>صالون حلاقة</option>'),
     ('<option>Sales &amp; Point of Sale</option>', '<option>مبيعات ونقاط بيع</option>'),
     ('<option>Inventory &amp; Warehouse</option>', '<option>مخزون ومخازن</option>'),
     ('<option>School &amp; Training Center</option>', '<option>مدرسة أو مركز تدريب</option>'),
@@ -244,6 +285,7 @@ PAIRS = [
     ('>Inventory</a>', '>المخازن</a>'),
     ('>Legal<', '>قانوني<'),
     ('>Healthcare<', '>رعاية صحية<'),
+    ('>Barbershops<', '>صالونات الحلاقة<'),
     ('>Arabic</span>', '>عربي</span>'),
     ('Solutions <svg', 'الحلول <svg'),
     ('>Solutions<', '>الحلول<'),
