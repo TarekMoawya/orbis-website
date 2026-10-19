@@ -302,6 +302,12 @@ PAIRS = [
     ('Grantira', 'جرانتيرا'),
     ('<span class="arrow">→</span>', '<span class="arrow">←</span>'),
 
+    # ---- full-size screenshot viewer ----
+    ('aria-label="Full-size screenshot" data-open-label="View full size"', 'aria-label="الصورة بالحجم الكامل" data-open-label="افتح الصورة بالحجم الكامل"'),
+    ('aria-label="Close">', 'aria-label="إغلاق">'),
+    ('aria-label="Previous screen"', 'aria-label="الشاشة السابقة"'),
+    ('aria-label="Next screen"', 'aria-label="الشاشة التالية"'),
+
     # ---- paths: the Arabic page lives one folder down ----
     ('src="assets/', 'src="../assets/'),
     ('href="assets/', 'href="../assets/'),
