@@ -1,0 +1,8 @@
+// Cloudflare Workers config: the site is plain static files served from the repo root.
+{
+  "name": "orbis-website",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "."
+  }
+}
