@@ -44,10 +44,6 @@ PAIRS = [
     ('A judicial agenda drawn like the paper diary, with every hearing, decision and power of attorney.',
      'أجندة قضائية زي الأجندة الورق بالظبط، فيها كل جلسة وقرار وتوكيل.'),
 
-    # menu links to the Grantira product page (Arabic only; the #grantira anchor stays)
-    ('<a class="feature-card" href="#grantira">', '<a class="feature-card" href="grantira/">'),
-    ('<a class="item" href="#grantira">', '<a class="item" href="grantira/">'),
-
     # ---- mega menu: work ----
     ('Judicial agenda, cases and powers of attorney.', 'الأجندة القضائية والقضايا والتوكيلات.'),
     ('Digital dental chart, billing and profit reports.', 'رسم أسنان رقمي وفواتير وتقارير أرباح.'),
@@ -317,6 +313,7 @@ PAIRS = [
     # ---- paths: the Arabic page lives one folder down ----
     ('src="assets/', 'src="../assets/'),
     ('href="assets/', 'href="../assets/'),
+    ('href="ar/grantira/" hreflang="ar"', 'href="grantira/"'),
 ]
 
 out = src
