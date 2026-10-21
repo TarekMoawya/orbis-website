@@ -100,6 +100,8 @@ PAIRS = [
     ('Three of the systems we have designed, built and delivered. More projects are on the way.', 'تلاتة من الأنظمة اللي صممناها وبنيناها وسلمناها، ومشاريع تانية جاية في الطريق.'),
 
     # grantira
+    ('<a class="btn btn-ghost" href="ar/grantira/" hreflang="ar">Grantira page (in Arabic) <span class="arrow">→</span></a>',
+     '<a class="btn btn-primary" href="grantira/">اعرف أكتر عن جرانتيرا <span class="arrow">←</span></a>'),
     ('Windows, Mac, Android, iOS &amp; web', 'ويندوز وماك وأندرويد وiOS والويب'),
     ("Law office management built for firms in Egypt. The paper court diary, the case files and the office's daily follow-up, in one Arabic workspace.",
      'إدارة مكاتب المحاماة، معمولة لمكاتب مصر. الأجندة الورق وملفات القضايا والمتابعة اليومية للمكتب، في مساحة عمل عربية واحدة.'),
@@ -311,6 +313,7 @@ PAIRS = [
     # ---- paths: the Arabic page lives one folder down ----
     ('src="assets/', 'src="../assets/'),
     ('href="assets/', 'href="../assets/'),
+    ('href="ar/grantira/" hreflang="ar"', 'href="grantira/"'),
 ]
 
 out = src
