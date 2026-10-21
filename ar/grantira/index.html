@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>جرانتيرا | برنامج إدارة مكاتب المحاماة المصرية — Orbis</title>
+<meta name="description" content="نظّم القضايا والجلسات والتوكيلات ومهام فريقك وعهدة الأوراق مع جرانتيرا. احجز عرضًا لبرنامج إدارة مكاتب المحاماة المصرية من Orbis.">
+<link rel="canonical" href="https://orbissolutionscom.org/ar/grantira/">
+<meta name="theme-color" content="#06141c">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:site_name" content="Orbis Solutions">
+<meta property="og:url" content="https://orbissolutionscom.org/ar/grantira/">
+<meta property="og:title" content="جرانتيرا | برنامج إدارة مكاتب المحاماة المصرية — Orbis">
+<meta property="og:description" content="نظّم القضايا والجلسات والتوكيلات ومهام فريقك وعهدة الأوراق مع جرانتيرا. احجز عرضًا لبرنامج إدارة مكاتب المحاماة المصرية من Orbis.">
+<meta property="og:image" content="https://orbissolutionscom.org/assets/work/grantira-agenda.webp">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Grantira",
+  "alternateName": "جرانتيرا",
+  "description": "برنامج لإدارة مكاتب المحاماة المصرية: الأجندة القضائية والقضايا والموكلين والتوكيلات ومهام الفريق وعهدة الأوراق.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows, macOS, Android, iOS, Web",
+  "inLanguage": "ar",
+  "url": "https://orbissolutionscom.org/ar/grantira/",
+  "image": "https://orbissolutionscom.org/assets/work/grantira-agenda.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orbis Software Solution and Technology",
+    "url": "https://orbissolutionscom.org/",
+    "telephone": "+201100795310"
+  }
+}
+</script>
+<style>
+/* Layout: Grantira product page in the Orbis look (dark, teal and blue, Arabic RTL). Mobile first; one long page with a sticky header, a fixed demo button on phones, and a WhatsApp demo request form at the end. */
+:root {
+  --bg: #06141c;
+  --bg-2: #0a1e29;
+  --panel: #0d2633;
+  --ink: #eaf4f7;
+  --muted: #9db4be;
+  --line: #17333f;
+  --blue: #2f7bff;
+  --teal: #19d3c0;
+  --danger: #ff8a8a;
+  --on-accent: #04121a;
+  --font: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+  --latin: "Unbounded", "Arial Black", system-ui, sans-serif;
+  --r: 16px;
+  --max: 1180px;
+  --head: 84px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--head); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.75 var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: 16px; }
+@media (min-width: 600px) { .wrap { padding-inline: 24px; } }
+h1, h2, h3 { font-weight: 700; line-height: 1.35; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(1.9rem, 6.4vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 4.2vw, 2.4rem); }
+h3 { font-size: 1.12rem; }
+p { margin: 0; }
+.eyebrow { font-weight: 600; font-size: .9rem; color: var(--teal); }
+.lede { color: var(--muted); font-size: 1.1rem; max-width: 62ch; }
+.grad { background: linear-gradient(270deg, var(--blue), var(--teal)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.small { color: var(--muted); font-size: .92rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: .98rem; line-height: 1.3; text-decoration: none; text-align: center; border: 1px solid transparent; cursor: pointer; transition: transform .2s var(--ease), background .2s, border-color .2s; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--teal); color: var(--on-accent); }
+.btn-primary:hover { background: color-mix(in srgb, var(--teal) 85%, white); }
+.btn-ghost { border-color: var(--line); background: color-mix(in srgb, var(--panel) 60%, transparent); }
+.btn-ghost:hover { border-color: var(--muted); }
+.arrow { transition: transform .2s var(--ease); }
+a:hover > .arrow { transform: translateX(-3px); }
+
+/* ---------- Header ---------- */
+.header { position: sticky; top: 0; z-index: 50; padding-top: calc(env(safe-area-inset-top, 0px) + 10px); }
+.bar { position: relative; display: flex; align-items: center; gap: 12px; padding: 8px 14px 8px 8px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--bg-2) 86%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.brand { display: grid; text-decoration: none; line-height: 1.2; margin-inline-end: auto; }
+.brand b { font-size: 1.2rem; font-weight: 700; }
+.brand small { color: var(--muted); font-size: .78rem; }
+.brand small span { font-family: var(--latin); font-size: .7rem; }
+.nav { display: none; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; }
+.nav a { display: block; padding: 9px 13px; border-radius: 999px; color: var(--muted); text-decoration: none; font-weight: 500; font-size: .95rem; }
+.nav a:hover { color: var(--ink); background: var(--panel); }
+.back { display: none; color: var(--muted); font-size: .86rem; text-decoration: none; white-space: nowrap; }
+.back:hover { color: var(--ink); }
+.bar .btn { min-height: 42px; padding: 10px 18px; font-size: .92rem; white-space: nowrap; }
+.bar-cta { display: none; }
+.burger { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); cursor: pointer; display: grid; place-items: center; flex: none; }
+.burger span { display: block; width: 16px; height: 2px; background: var(--ink); border-radius: 2px; position: relative; transition: background .2s; }
+.burger span::before, .burger span::after { content: ""; position: absolute; left: 0; width: 16px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .3s var(--ease); }
+.burger span::before { top: -5px; } .burger span::after { top: 5px; }
+.burger[aria-expanded="true"] span { background: transparent; }
+.burger[aria-expanded="true"] span::before { transform: translateY(5px) rotate(45deg); }
+.burger[aria-expanded="true"] span::after { transform: translateY(-5px) rotate(-45deg); }
+.drop { position: absolute; inset-inline: 0; top: calc(100% + 8px); display: none; gap: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 20px; background: var(--bg-2); box-shadow: 0 30px 60px -30px #000; }
+.drop.open { display: grid; }
+.drop a:not(.btn) { padding: 12px; border-radius: 12px; text-decoration: none; font-weight: 500; }
+.drop a:not(.btn):hover { background: var(--panel); }
+.drop .btn { margin-top: 6px; }
+@media (min-width: 480px) { .bar-cta { display: inline-flex; } }
+@media (min-width: 980px) {
+  .nav, .back { display: block; }
+  .burger, .drop, .drop.open { display: none; }
+}
+
+/* ---------- Sections ---------- */
+section { padding-block: clamp(56px, 9vw, 110px); }
+.alt { background: var(--bg-2); border-block: 1px solid var(--line); }
+.head { display: grid; gap: 12px; max-width: 760px; margin-bottom: clamp(28px, 5vw, 44px); }
+.after { margin-top: 32px; }
+
+/* ---------- Overview ---------- */
+.hero { position: relative; padding-top: clamp(36px, 7vw, 80px); overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: -30% -20% auto; height: 760px; background: radial-gradient(closest-side at 50% 30%, color-mix(in srgb, var(--blue) 24%, transparent), transparent 70%), radial-gradient(closest-side at 30% 50%, color-mix(in srgb, var(--teal) 16%, transparent), transparent 70%); pointer-events: none; }
+.hero .wrap { position: relative; display: grid; gap: 20px; }
+.hero-copy { display: grid; gap: 18px; justify-items: start; max-width: 820px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.actions .btn { flex: 1 1 220px; }
+@media (min-width: 600px) { .actions .btn { flex: 0 0 auto; } }
+.strip { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.strip li { display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--bg-2) 70%, transparent); font-size: .9rem; }
+.strip svg { width: 15px; height: 15px; color: var(--teal); flex: none; }
+.hero-shot { margin: clamp(16px, 4vw, 40px) 0 0; display: grid; gap: 10px; }
+.hero-shot figcaption { color: var(--muted); font-size: .88rem; }
+
+.frame { border-radius: 18px; padding: 6px; background: linear-gradient(180deg, var(--line), transparent); }
+.frame-inner { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #000; }
+.frame-inner img { width: 100%; height: auto; }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 680px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.card { display: grid; gap: 10px; align-content: start; padding: 22px; border-radius: var(--r); background: var(--bg); border: 1px solid var(--line); }
+.alt .card { background: var(--bg); }
+section:not(.alt) .card { background: var(--bg-2); }
+.card p { color: var(--muted); font-size: .97rem; }
+.ico { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; background: color-mix(in srgb, var(--teal) 12%, var(--panel)); color: var(--teal); border: 1px solid var(--line); }
+.ico svg { width: 20px; height: 20px; }
+.num { font-weight: 700; color: var(--teal); font-size: .9rem; }
+
+/* ---------- Screenshots ---------- */
+.tabs { display: flex; gap: 6px; overflow-x: auto; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-2); width: max-content; max-width: 100%; margin-bottom: 14px; scrollbar-width: none; }
+.tab { padding: 9px 16px; border-radius: 999px; border: 0; background: none; cursor: pointer; font-size: .92rem; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { background: var(--panel); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.shot { margin: 0; display: grid; gap: 12px; }
+.shot img { transition: opacity .25s; }
+.shot figcaption { color: var(--muted); font-size: .95rem; max-width: 70ch; }
+.zoom-note { color: var(--muted); font-size: .85rem; }
+
+/* ---------- Onboarding ---------- */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; counter-reset: s; grid-template-columns: 1fr; }
+@media (min-width: 680px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.steps li { counter-increment: s; display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: 2px solid var(--line); }
+.steps li::before { content: "خطوة " counter(s, arabic-indic); font-weight: 600; font-size: .88rem; color: var(--teal); }
+.steps p { color: var(--muted); font-size: .97rem; }
+.note { margin-top: 26px; color: var(--muted); font-size: .92rem; }
+
+/* ---------- Pricing ---------- */
+.plans { display: grid; gap: 14px; grid-template-columns: 1fr; max-width: 820px; }
+.plans.two { grid-template-columns: 1fr; }
+@media (min-width: 700px) { .plans.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.plan { display: grid; gap: 14px; align-content: start; padding: clamp(22px, 4vw, 30px); border-radius: 20px; border: 1px solid var(--line); background: linear-gradient(135deg, color-mix(in srgb, var(--teal) 9%, var(--bg-2)), var(--bg-2) 65%); }
+.plan .price { font-size: 1.05rem; color: var(--muted); }
+.plan .price b { font-size: clamp(1.7rem, 5vw, 2.2rem); color: var(--ink); font-weight: 700; }
+.plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.plan li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; font-size: .97rem; }
+.plan li svg { width: 18px; height: 18px; color: var(--teal); margin-top: 5px; }
+.plan .btn { justify-self: stretch; }
+.plan-notes { display: grid; gap: 6px; margin-top: 22px; color: var(--muted); font-size: .95rem; }
+.preview-flag { display: inline-block; justify-self: start; padding: 4px 10px; border-radius: 999px; border: 1px dashed var(--teal); color: var(--teal); font-size: .82rem; margin-bottom: 14px; }
+
+/* ---------- FAQ ---------- */
+.faq { display: grid; gap: 10px; max-width: 860px; }
+.faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--bg-2); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 14px; align-items: center; padding: 16px 18px; font-weight: 600; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); color: var(--teal); font-size: 1.1rem; line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { padding: 0 18px 18px; color: var(--muted); }
+.faq-cta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+/* ---------- Demo form ---------- */
+.demo { display: grid; gap: 28px; border-radius: 28px; border: 1px solid var(--line); background: radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--blue) 26%, var(--bg-2)), var(--bg-2) 60%); padding: clamp(20px, 5vw, 52px); }
+@media (min-width: 900px) { .demo { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 44px; } }
+.demo-copy { display: grid; gap: 14px; align-content: start; }
+.demo-copy dl { margin: 10px 0 0; display: grid; gap: 4px; }
+.demo-copy dt { color: var(--muted); font-size: .88rem; }
+.demo-copy dd { margin: 0; font-weight: 600; }
+.demo-copy dd a { text-decoration: none; }
+form { display: grid; gap: 16px; padding: clamp(18px, 4vw, 26px); border-radius: 20px; background: var(--bg); border: 1px solid var(--line); min-width: 0; }
+.field { display: grid; gap: 6px; }
+.field > label, legend { font-size: .95rem; font-weight: 600; }
+.opt { color: var(--muted); font-weight: 400; font-size: .85rem; }
+.req { color: var(--teal); }
+input[type="text"] { width: 100%; min-height: 48px; padding: 11px 13px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg-2); color: var(--ink); }
+input[type="text"]:focus { border-color: var(--teal); outline: 2px solid color-mix(in srgb, var(--teal) 40%, transparent); outline-offset: 1px; }
+input[aria-invalid="true"] { border-color: var(--danger); }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; min-width: 0; }
+legend { padding: 0; margin-bottom: 8px; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.choice span { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg-2); font-size: .95rem; }
+.choice input:checked + span { border-color: var(--teal); background: color-mix(in srgb, var(--teal) 16%, var(--bg-2)); }
+.choice input:focus-visible + span { outline: 2px solid var(--teal); outline-offset: 2px; }
+fieldset[aria-invalid="true"] .choice span { border-color: var(--danger); }
+.error { color: var(--danger); font-size: .88rem; min-height: 0; }
+.error:empty { display: none; }
+form .btn { width: 100%; }
+.form-help { color: var(--muted); font-size: .88rem; }
+.status { font-size: .95rem; }
+.status:empty { display: none; }
+.status { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg-2); }
+.status a { color: var(--teal); }
+
+/* ---------- Footer ---------- */
+footer { padding-block: 44px 32px; color: var(--muted); font-size: .93rem; border-top: 1px solid var(--line); }
+.foot { display: grid; gap: 22px; }
+@media (min-width: 760px) { .foot { grid-template-columns: 1.2fr 1fr 1fr; } }
+.foot b { color: var(--ink); font-size: 1.05rem; }
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--ink); }
+.foot-base { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); font-size: .86rem; }
+.latin { font-family: var(--latin); font-size: .85em; }
+
+/* ---------- Fixed demo button on phones ---------- */
+.sticky-cta { position: fixed; inset-inline: 0; bottom: 0; z-index: 45; padding: 10px 16px calc(env(safe-area-inset-bottom, 0px) + 10px); background: linear-gradient(0deg, var(--bg) 60%, transparent); transition: transform .3s var(--ease), opacity .3s, visibility 0s; }
+.sticky-cta .btn { width: 100%; box-shadow: 0 14px 30px -14px #000; }
+.sticky-cta.hide { transform: translateY(110%); opacity: 0; visibility: hidden; transition: transform .3s var(--ease), opacity .3s, visibility 0s .3s; }
+@media (max-width: 759px) { body { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 76px); } }
+@media (min-width: 760px) { .sticky-cta { display: none; } }
+
+/* ---------- Full-size screenshot viewer (same as the Orbis site) ---------- */
+.zoomable { cursor: zoom-in; }
+.zoom-hint { position: absolute; left: 10px; bottom: 10px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); background: rgba(6, 20, 28, .82); color: var(--ink); cursor: pointer; }
+.zoom-hint svg { width: 18px; height: 18px; }
+.zoom-hint:hover, .zoom-hint:focus-visible { border-color: var(--teal); }
+body.lb-open { overflow: hidden; }
+.lightbox { position: fixed; inset: 0; z-index: 100; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 64px 12px 20px; background: rgba(3, 10, 14, .96); }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: min(100%, 1600px); max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); width: auto; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #000; object-fit: contain; touch-action: pinch-zoom; }
+.lightbox figcaption { color: var(--muted); font-size: .9rem; text-align: center; max-width: 70ch; }
+.lb-btn { position: absolute; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; font-size: 1.4rem; line-height: 1; }
+.lb-btn:hover, .lb-btn:focus-visible { border-color: var(--teal); outline: none; }
+.lb-close { top: 12px; left: 12px; }
+.lb-prev, .lb-next { top: 50%; margin-top: -23px; transform: scaleX(-1); }
+.lb-prev { right: 12px; }
+.lb-next { left: 12px; }
+.lightbox.single .lb-prev, .lightbox.single .lb-next { display: none; }
+@media (max-width: 760px) { .lb-prev, .lb-next { top: auto; bottom: 14px; margin-top: 0; } .lightbox { padding-bottom: 76px; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></symbol>
+  <symbol id="i-tasks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.5 1.5L7.5 5M3.5 12l1.5 1.5L7.5 11M3.5 18l1.5 1.5L7.5 17"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.5 6-5.5s5.4 2.1 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.3c2.3.3 4 2 4.5 4.7"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#overview"><b>جرانتيرا</b><small>من <span>Orbis Solutions</span></small></a>
+      <nav class="nav" aria-label="أقسام الصفحة">
+        <ul>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#screenshots">شاشات البرنامج</a></li>
+          <li><a href="#pricing">الاشتراك</a></li>
+          <li><a href="#faq">أسئلة شائعة</a></li>
+        </ul>
+      </nav>
+      <a class="back" href="../">موقع Orbis <span class="arrow">←</span></a>
+      <a class="btn btn-primary bar-cta" href="#demo" data-cta="header">احجز عرض للبرنامج</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="drop" aria-label="فتح القائمة"><span></span></button>
+      <div class="drop" id="drop">
+        <a href="#features">المميزات</a>
+        <a href="#screenshots">شاشات البرنامج</a>
+        <a href="#pricing">الاشتراك</a>
+        <a href="#faq">أسئلة شائعة</a>
+        <a href="../">الرجوع لموقع Orbis</a>
+        <a class="btn btn-primary" href="#demo" data-cta="header_menu">احجز عرض للبرنامج</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 1. Overview -->
+  <section class="hero" id="overview">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">إدارة مكاتب المحاماة المصرية</p>
+        <h1>أجندة جلساتك وملفات قضاياك ومتابعة فريقك، <span class="grad">في مكان واحد.</span></h1>
+        <p class="lede">جرانتيرا بينظّم الشغل اليومي لمكتبك: من الجلسة وقرارها، للتوكيل ومهام الفريق وعهدة الأوراق. بواجهة عربية قريبة من طريقة الشغل اللي متعود عليها.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#demo" data-cta="hero">احجز عرض للبرنامج</a>
+          <a class="btn btn-ghost" href="#screenshots">شوف شاشات البرنامج</a>
+        </div>
+        <p class="small">شوف دورة شغل كاملة، واسأل عن احتياجات مكتبك قبل الاشتراك.</p>
+        <ul class="strip" aria-label="أهم ما في جرانتيرا">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>واجهة عربية</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>أجندة قضائية</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>متابعة الفريق</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>صلاحيات حسب الدور</li>
+        </ul>
+      </div>
+      <figure class="hero-shot">
+        <div class="frame"><div class="frame-inner"><img src="../../assets/work/grantira-agenda.webp" alt="الأجندة القضائية في جرانتيرا: تقويم شهر أكتوبر بالجلسات والإجازات الرسمية، مع فلتر حسب المحامي" width="1600" height="839" fetchpriority="high"></div></div>
+        <figcaption>الأجندة القضائية. اضغط على الصورة لتكبيرها.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. Workflow problem -->
+  <section id="workflow" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <h2>بدل ما تتابع الشغل بين الأجندة والملفات والمكالمات.</h2>
+      </div>
+      <div class="cards three">
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-bell"/></svg></span><h3>إيه المطلوب النهارده؟</h3><p>راجع الجلسات والمهام والأوراق اللي محتاجة متابعة من شاشة التذكيرات.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-folder"/></svg></span><h3>آخر قرار في القضية كان إيه؟</h3><p>ارجع لملف القضية وجلساتها وقراراتها من مكان واحد.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><h3>مين معاه أصل الورقة؟</h3><p>تابع عهدة الأوراق وحركتها بين أفراد المكتب.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Features -->
+  <section id="features">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">المميزات</p>
+        <h2>تفاصيل معمولة لطريقة شغل مكتب المحاماة.</h2>
+      </div>
+      <div class="cards three">
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>أجندة قضائية قريبة من الورق</h3><p>شوف الجلسات والمواعيد في تقويم واضح، وسجّل القرار وميعاد الجلسة الجاية من نفس دورة العمل.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-bell"/></svg></span><h3>تذكيرات تساعدك تبدأ يومك</h3><p>راجع جلسات النهارده وبكره، والقرارات غير المسجلة، والمهام المستحقة، والقضايا اللي محتاجة جلسة جاية.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-folder"/></svg></span><h3>القضايا والموكلين والتوكيلات</h3><p>اربط تفاصيل القضية بموكلها، وتابع حالة التوكيلات ومواعيد انتهائها.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-tasks"/></svg></span><h3>مهام واضحة للفريق</h3><p>وزّع المهام وراجع المطلوب من كل فرد، بدل ما المتابعة تفضل معتمدة على المكالمات.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><h3>أوراق المحضرين وعهدة المستندات</h3><p>تابع حالة الإعلان ومواعيده، واعرف مين مستلم أصل كل ورقة وسجل حركتها.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-cash"/></svg></span><h3>متابعة العهدة النقدية</h3><p>راجع المبالغ الموجودة بعهدة أفراد المكتب وما تم تسويته منها.</p></article>
+      </div>
+      <div class="after"><a class="btn btn-primary" href="#demo" data-cta="features">شوف جرانتيرا على دورة شغل مكتبك</a></div>
+    </div>
+  </section>
+
+  <!-- 4. Screenshots (no product video exists yet, so there is no video slot) -->
+  <section id="screenshots" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">شاشات البرنامج</p>
+        <h2>شوف جرانتيرا من جوّه.</h2>
+        <p class="lede">لقطات من واجهة البرنامج تساعدك تتصور استخدامه في يوم شغل عادي.</p>
+      </div>
+      <div data-gallery>
+        <div class="tabs" role="tablist" aria-label="شاشات جرانتيرا">
+          <button class="tab" role="tab" id="tab-agenda" aria-selected="true" aria-controls="shot-panel" data-src="../../assets/work/grantira-agenda.webp" data-w="1600" data-h="839" data-alt="الأجندة القضائية في جرانتيرا" data-desc="الأجندة القضائية: تقويم الشهر فيه الجلسات والمواعيد والإجازات الرسمية، وتقدر تتنقل بين الشهور وتعرض جلسات محامي معين.">الأجندة القضائية</button>
+          <button class="tab" role="tab" id="tab-today" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="../../assets/work/grantira-dashboard-dark.webp" data-w="1600" data-h="842" data-alt="الرئيسية في جرانتيرا مع تذكيرات اليوم ومتابعة المكتب" data-desc="تذكيرات اليوم ومتابعة المكتب: جلسات اليوم، والجلسات اللي قرارها لسه متسجلش، والمهام المتأخرة، وأوراق المحضرين، والقضايا اللي محتاجة جلسة جاية.">تذكيرات اليوم</button>
+          <button class="tab" role="tab" id="tab-light" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="../../assets/work/grantira-dashboard-light.webp" data-w="1600" data-h="840" data-alt="الشاشة الرئيسية في جرانتيرا بالوضع الفاتح" data-desc="نفس الشاشة الرئيسية بالوضع الفاتح. البرنامج فيه وضع فاتح ووضع غامق.">الوضع الفاتح</button>
+        </div>
+        <figure class="shot" role="tabpanel" id="shot-panel" aria-labelledby="tab-agenda">
+          <div class="frame"><div class="frame-inner"><img class="viewer-main" src="../../assets/work/grantira-agenda.webp" alt="الأجندة القضائية في جرانتيرا" width="1600" height="839" loading="lazy"></div></div>
+          <figcaption>الأجندة القضائية: تقويم الشهر فيه الجلسات والمواعيد والإجازات الرسمية، وتقدر تتنقل بين الشهور وتعرض جلسات محامي معين.</figcaption>
+        </figure>
+        <p class="zoom-note">اضغط على أي صورة أو زر التكبير لعرضها بالحجم الكامل.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Permissions -->
+  <section id="permissions">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">الصلاحيات</p>
+        <h2>كل فرد يتابع الشغل المسموح له.</h2>
+        <p class="lede">صلاحيات حسب الدور، وتحديد القضايا المسندة للمحامي، وإدارة حسابات الفريق من خلال المدير.</p>
+      </div>
+      <div class="cards three">
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-people"/></svg></span><h3>حسابات للفريق</h3><p>كل فرد في المكتب ليه حسابه، والمدير هو اللي بيعمل الحسابات. مفيش تسجيل مفتوح لأي حد من بره.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-key"/></svg></span><h3>صلاحيات حسب الدور</h3><p>كل دور بيشوف اللي يخصه، والمحامي بيتابع القضايا المسندة له وجلساتها وتذكيراتها.</p></article>
+        <article class="card"><span class="ico"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>تحكم المدير في الوصول</h3><p>المدير بيغيّر أدوار الفريق، ويقدر يوقف أي حساب وقت ما يحتاج.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Onboarding -->
+  <section id="onboarding" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">بدء التشغيل</p>
+        <h2>من أول عرض لحد بداية الاستخدام.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>نفهم طريقة شغل مكتبك</h3><p>نتكلم عن حجم الفريق وطريقة متابعة القضايا والجلسات حاليًا.</p></li>
+        <li><h3>نوريك دورة شغل كاملة</h3><p>نستعرض إضافة قضية، وتحديد جلسة، وتسجيل قرار، وتوزيع مهمة.</p></li>
+        <li><h3>نرتب الإعداد والتدريب</h3><p>نتفق على تجهيز الحسابات والتدريب، وأي احتياج لنقل البيانات.</p></li>
+        <li><h3>نتابع بداية الاستخدام</h3><p>التدريب والدعم متاحان حضوريًا وعن بُعد وفق نطاق الخدمة المتفق عليه.</p></li>
+      </ol>
+      <p class="note">تفاصيل نقل البيانات والزيارات وأي تكلفة إضافية بتتحدد قبل الاتفاق.</p>
+    </div>
+  </section>
+
+  <!-- 7. Pricing: the cards come from GRANTIRA below; this is the default (no prices shown) -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">الاشتراك</p>
+        <h2>اشتراك يناسب بداية مكتبك.</h2>
+        <p class="lede">باقة لفرع واحد و٥ موظفين، مع اختيار الدفع الشهري أو السنوي.</p>
+      </div>
+      <div class="plans" id="plans">
+        <article class="plan">
+          <h3>اشتراك شهري أو سنوي</h3>
+          <ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>فرع واحد و٥ موظفين</li></ul>
+          <a class="btn btn-primary" href="#demo" data-cta="pricing" data-plan="">اسأل عن تفاصيل الاشتراك</a>
+        </article>
+      </div>
+      <div class="plan-notes">
+        <p>تحتاج فريقًا أكبر أو فرعًا إضافيًا؟ تواصل معنا لتحديد العرض المناسب.</p>
+        <p>نقل البيانات والزيارات والخدمات الإضافية حسب الاتفاق.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">أسئلة شائعة</p>
+        <h2>أسئلة بتتسأل كتير.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>هل جرانتيرا مناسب لمكتب صغير؟</summary><p>لو عندك فريق وبتحتاج تنظيم القضايا والجلسات والمهام، نقدر نوريك طريقة الاستخدام ونشوف مدى مناسبته لمكتبك.</p></details>
+        <details><summary>هل الاشتراك شهري ولا سنوي؟</summary><p>الاتنين متاحين. الباقة الأساسية لفرع واحد و٥ موظفين، وتقدر تسألنا عن العرض المناسب لفريقك.</p></details>
+        <details><summary>هل كل الموظفين بيشوفوا نفس البيانات؟</summary><p>الوصول بيتحدد حسب الدور والصلاحيات والقضايا المسندة، والمدير بيتحكم في حسابات الفريق.</p></details>
+        <details><summary>هل في تدريب ودعم؟</summary><p>التدريب والدعم متاحان حضوريًا وعن بُعد، وبيتحدد نطاقهما وطريقة تقديمهما قبل الاتفاق.</p></details>
+        <details><summary>هل ممكن تنقلوا بيانات المكتب الحالية؟</summary><p>بنراجع شكل البيانات وحجمها الأول، وبنحدد إمكانية النقل ونطاقه وتكلفته قبل التنفيذ.</p></details>
+        <details><summary>هل أقدر أشوف البرنامج قبل الاشتراك؟</summary><p>أيوه، احجز عرض نتعرف فيه على طريقة شغلك ونوريك الوظائف الأساسية ونرد على أسئلتك.</p></details>
+      </div>
+      <div class="faq-cta">
+        <p class="small">عندك سؤال تاني؟ اسألنا وقت العرض.</p>
+        <a class="btn btn-primary" href="#demo" data-cta="faq">احجز عرض للبرنامج</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Demo request: builds a WhatsApp message; nothing is sent from this page -->
+  <section id="demo">
+    <div class="wrap">
+      <div class="demo">
+        <div class="demo-copy">
+          <p class="eyebrow">طلب عرض</p>
+          <h2>خلينا نوريك جرانتيرا على طريقة شغل مكتبك.</h2>
+          <p class="lede">ابعت طلبك على واتساب، وننسّق معاك موعدًا مناسبًا للعرض.</p>
+          <dl>
+            <dt>اتصال / واتساب</dt>
+            <dd><a href="tel:+201100795310" dir="ltr">+20 110 079 5310</a></dd>
+          </dl>
+        </div>
+        <form id="demo-form" novalidate>
+          <div class="field">
+            <label for="d-name">الاسم <span class="req" aria-hidden="true">*</span><span class="sr-only">(مطلوب)</span></label>
+            <input type="text" id="d-name" autocomplete="name" required aria-describedby="d-name-err">
+            <p class="error" id="d-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="d-office">اسم المكتب <span class="opt">(اختياري)</span></label>
+            <input type="text" id="d-office" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="d-staff">عدد الموظفين <span class="opt">(اختياري)</span></label>
+            <input type="text" id="d-staff" inputmode="numeric" autocomplete="off" aria-describedby="d-staff-err">
+            <p class="error" id="d-staff-err"></p>
+          </div>
+          <fieldset id="d-method" aria-describedby="d-method-err">
+            <legend>طريقة العرض المفضلة <span class="req" aria-hidden="true">*</span><span class="sr-only">(مطلوب)</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="method" value="عن بُعد"><span>عن بُعد</span></label>
+              <label class="choice"><input type="radio" name="method" value="زيارة للمكتب حسب الترتيب"><span>زيارة للمكتب حسب الترتيب</span></label>
+            </div>
+            <p class="error" id="d-method-err"></p>
+          </fieldset>
+          <fieldset id="d-plan">
+            <legend>خطة الاشتراك محل الاهتمام <span class="opt">(اختياري)</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="plan" value="monthly"><span>شهري</span></label>
+              <label class="choice"><input type="radio" name="plan" value="yearly"><span>سنوي</span></label>
+              <label class="choice"><input type="radio" name="plan" value="undecided"><span>لسه بحدد</span></label>
+            </div>
+          </fieldset>
+          <button class="btn btn-primary" type="submit">افتح واتساب لإرسال طلب العرض</button>
+          <p class="form-help">الزر بيفتح رسالة جاهزة؛ إنت بتراجعها وتبعتها بنفسك. الموعد بيتأكد بعد التنسيق مع الفريق.</p>
+          <p class="status" id="d-status" role="status" aria-live="polite"></p>
+          <noscript><p class="form-help">لو الفورم مش شغال عندك، ابعتلنا على واتساب مباشرة: <a href="https://wa.me/201100795310" dir="ltr">+20 110 079 5310</a></p></noscript>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><b>جرانتيرا — من <span class="latin">Orbis Solutions</span></b><p>برنامج لإدارة مكاتب المحاماة المصرية.</p></div>
+      <ul>
+        <li><a href="../">موقع Orbis</a></li>
+        <li><a href="../#work">أعمال Orbis</a></li>
+        <li><a href="#demo" data-cta="footer">احجز عرض للبرنامج</a></li>
+      </ul>
+      <ul>
+        <li><a href="tel:+201100795310">اتصال: <span dir="ltr">+20 110 079 5310</span></a></li>
+        <li><a href="https://wa.me/201100795310" data-wa target="_blank" rel="noopener" data-cta="footer_whatsapp">واتساب</a></li>
+      </ul>
+    </div>
+    <p class="foot-base">© <span id="year">2026</span> Orbis للحلول البرمجية والتكنولوجيا</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky-cta">
+  <a class="btn btn-primary" href="#demo" data-cta="sticky_mobile">احجز عرض لجرانتيرا</a>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="الصورة بالحجم الكامل" data-open-label="افتح الصورة بالحجم الكامل">
+  <button class="lb-btn lb-close" type="button" aria-label="إغلاق">&times;</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="الشاشة السابقة">&lsaquo;</button>
+  <figure style="margin:0;display:grid;gap:10px;justify-items:center;min-width:0"><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-btn lb-next" type="button" aria-label="الشاشة التالية">&rsaquo;</button>
+</div>
+
+<script>
+/* ---------- Page settings: edit these ----------
+   whatsapp:     number used in every WhatsApp link (country code, digits only)
+   showPricing:  false shows "monthly or yearly, ask for details" with no numbers.
+                 Keep it false until the price, limits, manager seat, support scope and taxes are approved.
+   pricing:      proposed prices in EGP, for review only.
+   On a preview link (not the live domain) add ?pricing=preview to the URL to see the price cards. */
+var GRANTIRA = {
+  whatsapp: '201100795310',
+  showPricing: false,
+  pricing: { monthly: 600, yearly: 6000 }
+};
+</script>
+<script>
+document.documentElement.classList.add('js');
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Measurement: no tracking provider is installed. Events go to window.dataLayer only if a
+   tag manager is added later. Only the button position and plan are sent, never form data. */
+function track(name, props) {
+  var data = { event: name, position: props.position || '', plan: props.plan || '' };
+  if (Array.isArray(window.dataLayer)) window.dataLayer.push(data);
+  try { window.dispatchEvent(new CustomEvent('grantira:track', { detail: data })); } catch (e) {}
+}
+
+var waBase = 'https://wa.me/' + GRANTIRA.whatsapp;
+document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = waBase; });
+
+/* Header menu on phones and tablets */
+(function () {
+  var burger = document.querySelector('.burger');
+  var drop = document.getElementById('drop');
+  function set(on) {
+    drop.classList.toggle('open', on);
+    burger.setAttribute('aria-expanded', String(on));
+    burger.setAttribute('aria-label', on ? 'إغلاق القائمة' : 'فتح القائمة');
+  }
+  burger.addEventListener('click', function () { set(!drop.classList.contains('open')); });
+  drop.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+  document.addEventListener('click', function (e) { if (drop.classList.contains('open') && !e.target.closest('.bar')) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && drop.classList.contains('open')) { set(false); burger.focus(); } });
+})();
+
+/* Pricing: numbers only when showPricing is on (or ?pricing=preview on a non-live host) */
+(function () {
+  var live = /^(www\.)?orbissolutionscom\.org$|^orbis-website\.tarek-moawya\.workers\.dev$/.test(location.hostname);
+  var preview = !live && /[?&]pricing=preview\b/.test(location.search);
+  if (!GRANTIRA.showPricing && !preview) return;
+  var p = GRANTIRA.pricing;
+  var n = function (x) { return Number(x).toLocaleString('ar-EG'); };
+  var tick = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
+  var box = document.getElementById('plans');
+  box.classList.add('two');
+  box.innerHTML =
+    (preview && !GRANTIRA.showPricing ? '<p class="preview-flag" style="grid-column:1/-1">معاينة الأسعار المقترحة، مش ظاهرة للزوار</p>' : '') +
+    '<article class="plan"><h3>شهري</h3><p class="price"><b>' + n(p.monthly) + ' جنيه</b> / شهر</p>' +
+    '<ul><li>' + tick + 'الدفع شهريًا</li><li>' + tick + 'فرع واحد و٥ موظفين</li></ul>' +
+    '<a class="btn btn-primary" href="#demo" data-cta="pricing_monthly" data-plan="monthly">احجز عرض واسأل عن الاشتراك الشهري</a></article>' +
+    '<article class="plan"><h3>سنوي</h3><p class="price"><b>' + n(p.yearly) + ' جنيه</b> / سنة</p>' +
+    '<ul><li>' + tick + 'تُدفع مقدمًا — تعادل ' + n(Math.round(p.yearly / 12)) + ' جنيه شهريًا</li>' +
+    (p.monthly * 12 > p.yearly ? '<li>' + tick + 'توفير ' + n(p.monthly * 12 - p.yearly) + ' جنيه مقارنة بالدفع الشهري لمدة سنة</li>' : '') +
+    '<li>' + tick + 'فرع واحد و٥ موظفين</li></ul>' +
+    '<a class="btn btn-primary" href="#demo" data-cta="pricing_yearly" data-plan="yearly">احجز عرض واسأل عن الاشتراك السنوي</a></article>';
+})();
+
+/* Demo buttons: count the click, and pricing buttons pre-select the plan (never submit) */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('[data-cta]');
+  if (!a) return;
+  var pos = a.dataset.cta;
+  if (a.hasAttribute('data-wa')) { track('grantira_whatsapp_open', { position: pos }); return; }
+  if (a.hasAttribute('data-plan')) {
+    var plan = a.dataset.plan;
+    track('grantira_pricing_interest', { position: pos, plan: plan || 'details' });
+    if (plan) { var r = document.querySelector('#d-plan input[value="' + plan + '"]'); if (r) r.checked = true; }
+  }
+  track('grantira_demo_cta_click', { position: pos, plan: a.dataset.plan || '' });
+});
+
+/* Fixed phone button: hidden while the demo form is on screen */
+(function () {
+  var bar = document.getElementById('sticky-cta');
+  if (!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { bar.classList.toggle('hide', en.isIntersecting); });
+  }, { threshold: 0.15 }).observe(document.getElementById('demo'));
+})();
+
+/* Screenshot tabs: click or arrow keys (Home / End too) */
+(function () {
+  var g = document.querySelector('[data-gallery]');
+  var img = g.querySelector('.viewer-main');
+  var cap = g.querySelector('.shot figcaption');
+  var panel = document.getElementById('shot-panel');
+  var tabs = Array.prototype.slice.call(g.querySelectorAll('.tab'));
+  function select(t, focus) {
+    tabs.forEach(function (o) { var on = o === t; o.setAttribute('aria-selected', String(on)); o.tabIndex = on ? 0 : -1; });
+    panel.setAttribute('aria-labelledby', t.id);
+    cap.textContent = t.dataset.desc;
+    if (focus) t.focus();
+    if (img.getAttribute('src') === t.dataset.src) return;
+    img.style.opacity = '0.2';
+    var next = new Image();
+    next.onload = next.onerror = function () { if (t.getAttribute('aria-selected') !== 'true') return; img.src = t.dataset.src; img.alt = t.dataset.alt; img.width = t.dataset.w; img.height = t.dataset.h; img.style.opacity = '1'; };
+    next.src = t.dataset.src;
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t, false); });
+    t.addEventListener('keydown', function (e) {
+      var j = null;
+      if (e.key === 'ArrowLeft') j = i + 1;        /* right to left: left goes to the next tab */
+      else if (e.key === 'ArrowRight') j = i - 1;
+      else if (e.key === 'Home') j = 0;
+      else if (e.key === 'End') j = tabs.length - 1;
+      if (j === null) return;
+      e.preventDefault();
+      select(tabs[(j + tabs.length) % tabs.length], true);
+    });
+  });
+})();
+
+/* Full-size screenshot viewer: click or tap any screenshot to open it big */
+(function () {
+  var lb = document.getElementById('lightbox');
+  var big = lb.querySelector('img'), cap = lb.querySelector('figcaption');
+  var set = [], idx = 0, opener = null;
+  var icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+
+  function screensFor(img) {
+    var g = img.closest('[data-gallery]');
+    if (g) {
+      var tabs = Array.prototype.slice.call(g.querySelectorAll('.tab'));
+      return { list: tabs.map(function (t) { return { src: t.dataset.src, alt: t.dataset.desc }; }), at: Math.max(0, tabs.findIndex(function (t) { return t.dataset.src === img.getAttribute('src'); })) };
+    }
+    return { list: [{ src: img.getAttribute('src'), alt: img.alt }], at: 0 };
+  }
+  function show(i) {
+    idx = (i + set.length) % set.length;
+    big.src = set[idx].src; big.alt = set[idx].alt; cap.textContent = set[idx].alt;
+    if (set.length > 1) cap.textContent += '  ·  ' + (idx + 1) + ' / ' + set.length;
+  }
+  function open(img) {
+    var s = screensFor(img);
+    set = s.list; opener = document.activeElement;
+    lb.classList.toggle('single', set.length < 2);
+    show(s.at);
+    lb.classList.add('open');
+    document.body.classList.add('lb-open');
+    lb.querySelector('.lb-close').focus();
+  }
+  function close() {
+    lb.classList.remove('open');
+    document.body.classList.remove('lb-open');
+    if (opener && opener.focus) opener.focus();
+  }
+
+  document.querySelectorAll('.frame-inner img').forEach(function (img) {
+    img.classList.add('zoomable');
+    img.addEventListener('click', function () { open(img); });
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'zoom-hint'; b.innerHTML = icon;
+    b.setAttribute('aria-label', lb.dataset.openLabel);
+    b.addEventListener('click', function () { open(img); });
+    img.parentNode.appendChild(b);
+  });
+
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function () { show(idx - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function () { show(idx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.tagName === 'FIGURE') close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') show(idx - 1);
+    else if (e.key === 'ArrowLeft') show(idx + 1);
+    else if (e.key === 'Tab') {
+      var f = Array.prototype.slice.call(lb.querySelectorAll('button')).filter(function (b) { return b.offsetParent; });
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null || set.length < 2) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) show(idx + (dx > 0 ? 1 : -1));
+  });
+})();
+
+/* Demo form: check the fields, then open WhatsApp with a ready message the visitor sends themselves */
+(function () {
+  var form = document.getElementById('demo-form');
+  var name = document.getElementById('d-name');
+  var office = document.getElementById('d-office');
+  var staff = document.getElementById('d-staff');
+  var method = document.getElementById('d-method');
+  var status = document.getElementById('d-status');
+  var planLabel = { monthly: 'شهري', yearly: 'سنوي', undecided: 'لسه بحدد' };
+
+  function setError(el, errId, msg) {
+    document.getElementById(errId).textContent = msg;
+    if (msg) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+    return !msg;
+  }
+  function digits(s) { return s.replace(/[٠-٩]/g, function (d) { return String(d.charCodeAt(0) - 0x660); }).replace(/[۰-۹]/g, function (d) { return String(d.charCodeAt(0) - 0x6F0); }).trim(); }
+  function checked(group) { var r = form.querySelector('input[name="' + group + '"]:checked'); return r ? r.value : ''; }
+
+  form.addEventListener('input', function (e) {
+    if (e.target === name && name.value.trim()) setError(name, 'd-name-err', '');
+    if (e.target === staff) setError(staff, 'd-staff-err', '');
+    if (e.target.name === 'method') setError(method, 'd-method-err', '');
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var staffVal = digits(staff.value);
+    var ok = [
+      setError(name, 'd-name-err', name.value.trim() ? '' : 'اكتب اسمك عشان نعرف نتواصل معاك.'),
+      setError(staff, 'd-staff-err', !staffVal || /^\d{1,4}$/.test(staffVal) && +staffVal > 0 ? '' : 'اكتب عدد الموظفين بالأرقام، أو سيب الخانة فاضية.'),
+      setError(method, 'd-method-err', checked('method') ? '' : 'اختار طريقة العرض اللي تناسبك.')
+    ];
+    if (ok.indexOf(false) !== -1) {
+      var first = [name, staff, method.querySelector('input')][ok.indexOf(false)];
+      first.focus();
+      status.textContent = '';
+      return;
+    }
+    var plan = checked('plan');
+    var lines = ['أهلًا، عايز أحجز عرض لجرانتيرا.', 'الاسم: ' + name.value.trim()];
+    if (office.value.trim()) lines.push('المكتب: ' + office.value.trim());
+    if (staffVal) lines.push('عدد الموظفين: ' + staffVal);
+    lines.push('طريقة العرض المفضلة: ' + checked('method'));
+    if (plan) lines.push('الاشتراك محل الاهتمام: ' + planLabel[plan]);
+    lines.push('مصدر الطلب: صفحة جرانتيرا');
+    var url = waBase + '?text=' + encodeURIComponent(lines.join('\n'));
+
+    track('grantira_whatsapp_open', { position: 'demo_form', plan: plan });
+    window.open(url, '_blank', 'noopener');
+    status.innerHTML = 'فتحنا واتساب برسالة جاهزة. راجعها واضغط إرسال من هناك، وهنتواصل معاك لتأكيد الموعد. لو واتساب مفتحش، <a target="_blank" rel="noopener">افتحه من هنا</a>.';
+    status.querySelector('a').href = url;
+  });
+})();
+</script>
+</body>
+</html>
