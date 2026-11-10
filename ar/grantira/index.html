@@ -189,6 +189,24 @@ section:not(.alt) .card { background: var(--bg-2); }
 .plan li svg { width: 18px; height: 18px; color: var(--teal); margin-top: 5px; }
 .plan .btn { justify-self: stretch; }
 .plan-notes { display: grid; gap: 6px; margin-top: 22px; color: var(--muted); font-size: .95rem; }
+.plans.three { max-width: none; }
+@media (min-width: 900px) { .plans.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.plan.hot { border-color: var(--teal); }
+.plan .tag { justify-self: start; padding: 3px 12px; border-radius: 999px; background: var(--teal); color: var(--on-accent); font-size: .82rem; font-weight: 700; }
+.plan .who { color: var(--muted); font-size: .95rem; }
+.plan .seats { font-weight: 600; padding-top: 12px; border-top: 1px solid var(--line); }
+.plan .per { color: var(--muted); font-size: .9rem; }
+.plan .per:empty { display: none; }
+.plan .addon { padding: 14px; border-radius: 12px; border: 1px dashed color-mix(in srgb, var(--teal) 55%, var(--line)); display: grid; gap: 4px; font-size: .95rem; }
+.plan .addon b { color: var(--ink); }
+.plan .addon span { color: var(--muted); }
+.soon { display: inline-block; margin-inline-start: 6px; padding: 0 8px; border-radius: 999px; border: 1px solid var(--teal); color: var(--teal); font-size: .78rem; font-weight: 600; vertical-align: 2px; }
+.billing { display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg-2); }
+.billing button { font: inherit; font-weight: 600; font-size: .95rem; min-height: 40px; padding: 6px 18px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; }
+.billing button[aria-pressed="true"] { background: var(--teal); color: var(--on-accent); }
+.billing button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.billing-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+.billing-row small { color: var(--teal); font-weight: 600; margin-bottom: 18px; }
 .preview-flag { display: inline-block; justify-self: start; padding: 4px 10px; border-radius: 999px; border: 1px dashed var(--teal); color: var(--teal); font-size: .82rem; margin-bottom: 14px; }
 
 /* ---------- FAQ ---------- */
@@ -434,23 +452,71 @@ body.lb-open { overflow: hidden; }
     </div>
   </section>
 
-  <!-- 7. Pricing: the cards come from GRANTIRA below; this is the default (no prices shown) -->
+  <!-- 7. Pricing: prices live in GRANTIRA.plans below (monthly EGP; yearly = 10 months) -->
   <section id="pricing">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">الاشتراك</p>
-        <h2>اشتراك يناسب بداية مكتبك.</h2>
-        <p class="lede">باقة لفرع واحد و٥ موظفين، مع اختيار الدفع الشهري أو السنوي.</p>
+        <p class="eyebrow">الباقات</p>
+        <h2>باقة على قد مكتبك.</h2>
+        <p class="lede">كل الباقات فيها كل خصائص البرنامج. الفرق في عدد الحسابات، وكل ما المكتب يكبر سعر الحساب بيقل.</p>
       </div>
-      <div class="plans" id="plans">
+      <div class="billing-row">
+        <div class="billing" role="group" aria-label="طريقة الدفع">
+          <button type="button" data-billing="monthly" aria-pressed="true">شهري</button>
+          <button type="button" data-billing="yearly" aria-pressed="false">سنوي</button>
+        </div>
+        <small>السنوي: ١٢ شهر بسعر ١٠</small>
+      </div>
+      <div class="plans three" id="plans">
         <article class="plan">
-          <h3>اشتراك شهري أو سنوي</h3>
-          <ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>فرع واحد و٥ موظفين</li></ul>
-          <a class="btn btn-primary" href="#demo" data-cta="pricing" data-plan="">اسأل عن تفاصيل الاشتراك</a>
+          <h3>المحامي</h3>
+          <p class="who">لمحامي شغال لوحده وعايز شغله كله منظم.</p>
+          <p class="price"><b data-price="lawyer">٣٠٠ جنيه</b> <span data-unit>/ شهر</span></p>
+          <p class="per" data-per="lawyer"></p>
+          <p class="seats">حساب واحد</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>الأجندة والقضايا والموكلين والتوكيلات</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>أوراق المحضرين وعهدة الأوراق والصيغ</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>الأتعاب وسندات القبض</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>تذكيرات في البرنامج وعلى الإيميل</li>
+          </ul>
+          <a class="btn btn-primary" href="#demo" data-cta="pricing_lawyer" data-plan="lawyer">احجز عرض لباقة المحامي</a>
+        </article>
+        <article class="plan hot">
+          <span class="tag">الأنسب لأغلب المكاتب</span>
+          <h3>المكتب</h3>
+          <p class="who">لمكتب صغير فيه شريك ومحامين وسكرتارية.</p>
+          <p class="price"><b data-price="office">٦٠٠ جنيه</b> <span data-unit>/ شهر</span></p>
+          <p class="per" data-per="office"></p>
+          <p class="seats">٣ حسابات، وكل حساب زيادة بـ١٠٠ جنيه في الشهر</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>كل اللي في باقة المحامي</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>صلاحيات لكل دور في المكتب</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>مهام الفريق واعتماد الشريك</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>العهدة النقدية والحضور والانصراف</li>
+          </ul>
+          <a class="btn btn-primary" href="#demo" data-cta="pricing_office" data-plan="office">احجز عرض لباقة المكتب</a>
+        </article>
+        <article class="plan">
+          <h3>البرو</h3>
+          <p class="who">لمكتب أكبر فيه فريق كامل.</p>
+          <p class="price"><b data-price="pro">١٬٠٠٠ جنيه</b> <span data-unit>/ شهر</span></p>
+          <p class="per" data-per="pro"></p>
+          <p class="seats">٧ حسابات، وكل حساب زيادة بـ١٠٠ جنيه في الشهر</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>كل اللي في باقة المكتب</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>دعم فني بأولوية</li>
+          </ul>
+          <div class="addon">
+            <b>إضافة: المساعد على واتساب <span class="soon">قريبًا</span></b>
+            <span>رسالة كل صبح بأولويات اليوم، وتسأله «هات لي القضية كذا» أو «ورق الموكل فلان» من الشات.</span>
+            <span>بزيادة <span data-price="bot">٤٠٠ جنيه</span> <span data-unit>/ شهر</span></span>
+          </div>
+          <a class="btn btn-primary" href="#demo" data-cta="pricing_pro" data-plan="pro">احجز عرض لباقة البرو</a>
         </article>
       </div>
       <div class="plan-notes">
-        <p>تحتاج فريقًا أكبر أو فرعًا إضافيًا؟ تواصل معنا لتحديد العرض المناسب.</p>
+        <p>عندك أكتر من فرع؟ تواصل معنا لتحديد العرض المناسب.</p>
         <p>نقل البيانات والزيارات والخدمات الإضافية حسب الاتفاق.</p>
       </div>
     </div>
@@ -465,7 +531,7 @@ body.lb-open { overflow: hidden; }
       </div>
       <div class="faq">
         <details><summary>هل جرانتيرا مناسب لمكتب صغير؟</summary><p>لو عندك فريق وبتحتاج تنظيم القضايا والجلسات والمهام، نقدر نوريك طريقة الاستخدام ونشوف مدى مناسبته لمكتبك.</p></details>
-        <details><summary>هل الاشتراك شهري ولا سنوي؟</summary><p>الاتنين متاحين. الباقة الأساسية لفرع واحد و٥ موظفين، وتقدر تسألنا عن العرض المناسب لفريقك.</p></details>
+        <details><summary>هل الاشتراك شهري ولا سنوي؟</summary><p>الاتنين متاحين. السنوي بيتدفع مقدم وبيوفر شهرين، يعني ١٢ شهر بسعر ١٠.</p></details>
         <details><summary>هل كل الموظفين بيشوفوا نفس البيانات؟</summary><p>الوصول بيتحدد حسب الدور والصلاحيات والقضايا المسندة، والمدير بيتحكم في حسابات الفريق.</p></details>
         <details><summary>هل في تدريب ودعم؟</summary><p>التدريب والدعم متاحان حضوريًا وعن بُعد، وبيتحدد نطاقهما وطريقة تقديمهما قبل الاتفاق.</p></details>
         <details><summary>هل ممكن تنقلوا بيانات المكتب الحالية؟</summary><p>بنراجع شكل البيانات وحجمها الأول، وبنحدد إمكانية النقل ونطاقه وتكلفته قبل التنفيذ.</p></details>
@@ -517,8 +583,9 @@ body.lb-open { overflow: hidden; }
           <fieldset id="d-plan">
             <legend>خطة الاشتراك محل الاهتمام <span class="opt">(اختياري)</span></legend>
             <div class="choices">
-              <label class="choice"><input type="radio" name="plan" value="monthly"><span>شهري</span></label>
-              <label class="choice"><input type="radio" name="plan" value="yearly"><span>سنوي</span></label>
+              <label class="choice"><input type="radio" name="plan" value="lawyer"><span>المحامي</span></label>
+              <label class="choice"><input type="radio" name="plan" value="office"><span>المكتب</span></label>
+              <label class="choice"><input type="radio" name="plan" value="pro"><span>البرو</span></label>
               <label class="choice"><input type="radio" name="plan" value="undecided"><span>لسه بحدد</span></label>
             </div>
           </fieldset>
@@ -563,15 +630,13 @@ body.lb-open { overflow: hidden; }
 
 <script>
 /* ---------- Page settings: edit these ----------
-   whatsapp:     number used in every WhatsApp link (country code, digits only)
-   showPricing:  false shows "monthly or yearly, ask for details" with no numbers.
-                 Keep it false until the price, limits, manager seat, support scope and taxes are approved.
-   pricing:      proposed prices in EGP, for review only.
-   On a preview link (not the live domain) add ?pricing=preview to the URL to see the price cards. */
+   whatsapp: number used in every WhatsApp link (country code, digits only)
+   plans:    monthly price in EGP for each plan; the yearly price is 10 months.
+             If you change a price, also change the number written in the pricing section HTML. */
 var GRANTIRA = {
   whatsapp: '201100795310',
-  showPricing: false,
-  pricing: { monthly: 600, yearly: 6000 }
+  yearlyMonths: 10,
+  plans: { lawyer: 300, office: 600, pro: 1000, bot: 400 }
 };
 </script>
 <script>
@@ -604,26 +669,24 @@ document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = waBase; }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && drop.classList.contains('open')) { set(false); burger.focus(); } });
 })();
 
-/* Pricing: numbers only when showPricing is on (or ?pricing=preview on a non-live host) */
+/* Pricing: monthly / yearly switch */
 (function () {
-  var live = /^(www\.)?orbissolutionscom\.org$|^orbis-website\.tarek-moawya\.workers\.dev$/.test(location.hostname);
-  var preview = !live && /[?&]pricing=preview\b/.test(location.search);
-  if (!GRANTIRA.showPricing && !preview) return;
-  var p = GRANTIRA.pricing;
   var n = function (x) { return Number(x).toLocaleString('ar-EG'); };
-  var tick = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
-  var box = document.getElementById('plans');
-  box.classList.add('two');
-  box.innerHTML =
-    (preview && !GRANTIRA.showPricing ? '<p class="preview-flag" style="grid-column:1/-1">معاينة الأسعار المقترحة، مش ظاهرة للزوار</p>' : '') +
-    '<article class="plan"><h3>شهري</h3><p class="price"><b>' + n(p.monthly) + ' جنيه</b> / شهر</p>' +
-    '<ul><li>' + tick + 'الدفع شهريًا</li><li>' + tick + 'فرع واحد و٥ موظفين</li></ul>' +
-    '<a class="btn btn-primary" href="#demo" data-cta="pricing_monthly" data-plan="monthly">احجز عرض واسأل عن الاشتراك الشهري</a></article>' +
-    '<article class="plan"><h3>سنوي</h3><p class="price"><b>' + n(p.yearly) + ' جنيه</b> / سنة</p>' +
-    '<ul><li>' + tick + 'تُدفع مقدمًا — تعادل ' + n(Math.round(p.yearly / 12)) + ' جنيه شهريًا</li>' +
-    (p.monthly * 12 > p.yearly ? '<li>' + tick + 'توفير ' + n(p.monthly * 12 - p.yearly) + ' جنيه مقارنة بالدفع الشهري لمدة سنة</li>' : '') +
-    '<li>' + tick + 'فرع واحد و٥ موظفين</li></ul>' +
-    '<a class="btn btn-primary" href="#demo" data-cta="pricing_yearly" data-plan="yearly">احجز عرض واسأل عن الاشتراك السنوي</a></article>';
+  var btns = document.querySelectorAll('[data-billing]');
+  function show(yearly) {
+    var k = yearly ? GRANTIRA.yearlyMonths : 1;
+    document.querySelectorAll('[data-price]').forEach(function (el) { el.textContent = n(GRANTIRA.plans[el.dataset.price] * k) + ' جنيه'; });
+    document.querySelectorAll('[data-unit]').forEach(function (el) { el.textContent = yearly ? '/ سنة' : '/ شهر'; });
+    document.querySelectorAll('[data-per]').forEach(function (el) {
+      var m = GRANTIRA.plans[el.dataset.per];
+      el.textContent = yearly ? 'يعني ' + n(Math.round(m * GRANTIRA.yearlyMonths / 12)) + ' جنيه في الشهر، وبتوفر ' + n(m * (12 - GRANTIRA.yearlyMonths)) + ' جنيه' : '';
+    });
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String((b.dataset.billing === 'yearly') === yearly)); });
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.billing === 'yearly'); track('grantira_billing_switch', { position: 'pricing', plan: b.dataset.billing }); });
+  });
+  show(false);
 })();
 
 /* Demo buttons: count the click, and pricing buttons pre-select the plan (never submit) */
@@ -760,7 +823,7 @@ document.addEventListener('click', function (e) {
   var staff = document.getElementById('d-staff');
   var method = document.getElementById('d-method');
   var status = document.getElementById('d-status');
-  var planLabel = { monthly: 'شهري', yearly: 'سنوي', undecided: 'لسه بحدد' };
+  var planLabel = { lawyer: 'باقة المحامي', office: 'باقة المكتب', pro: 'باقة البرو', undecided: 'لسه بحدد' };
 
   function setError(el, errId, msg) {
     document.getElementById(errId).textContent = msg;
